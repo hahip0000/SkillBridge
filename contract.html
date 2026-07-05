@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic Contract - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f4f7ff;
+            color: #102a43;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .contract-card,
+        .info-card,
+        .status-card,
+        .sidebar-card {
+            border-radius: 28px;
+            background: #ffffff;
+            border: none;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        .section-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #475569;
+        }
+
+        .data-row {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-pill {
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+
+        .contract-footer {
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        .signature-box {
+            border: 1px dashed #cbd5e1;
+            border-radius: 18px;
+            padding: 1.25rem;
+            min-height: 110px;
+            background: #f8fafc;
+        }
+
+        .summary-card {
+            border-radius: 24px;
+            background: #eff6ff;
+        }
+
+        .btn-outline-demo {
+            border-radius: 999px;
+            padding: 0.85rem 1.25rem;
+        }
+
+        .contract-actions .btn {
+            min-width: 150px;
+        }
+
+        @media (max-width: 767.98px) {
+            .contract-card,
+            .info-card,
+            .status-card,
+            .sidebar-card {
+                border-radius: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-xl-10">
+                <div class="contract-card p-4 mb-4">
+                    <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3 mb-4">
+                        <div>
+                            <h1 class="h3 fw-bold mb-1">Electronic Contract</h1>
+                            <p class="text-muted mb-0">Demo view of a contractual agreement between a student and a company for a SkillBridge project.</p>
+                        </div>
+                        <div class="text-md-end">
+                            <span class="badge bg-success bg-opacity-15 text-success status-pill">Signed</span>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="info-card p-4 h-100">
+                                <h5 class="section-title">Student</h5>
+                                <p class="mb-2"><strong>Ngọc Hà</strong></p>
+                                <p class="text-secondary mb-2">Software Engineering Student</p>
+                                <p class="text-secondary mb-0"><i class="bi bi-envelope me-2"></i>ngochha@example.com</p>
+                                <p class="text-secondary mb-0"><i class="bi bi-telephone me-2"></i>+84 123 456 789</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-card p-4 h-100">
+                                <h5 class="section-title">Company</h5>
+                                <p class="mb-2"><strong>BridgeTech Solutions</strong></p>
+                                <p class="text-secondary mb-2">Innovation & Experience Agency</p>
+                                <p class="text-secondary mb-0"><i class="bi bi-geo-alt me-2"></i>Hồ Chí Minh City, Vietnam</p>
+                                <p class="text-secondary mb-0"><i class="bi bi-globe me-2"></i>www.bridgetech.vn</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="info-card p-4 h-100">
+                                <h5 class="section-title">Project</h5>
+                                <p class="mb-2"><strong>Thiết kế Landing Page</strong></p>
+                                <p class="text-secondary mb-2">Thiết kế landing page cho Lotus Tech Solutions dưới dạng responsive và thân thiện người dùng.</p>
+                                <p class="text-secondary mb-0"><strong>Budget:</strong> $5,200</p>
+                                <p class="text-secondary mb-0"><strong>Timeline:</strong> July 10 - August 31, 2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="info-card p-4 mb-4">
+                            <h5 class="section-title">Responsibilities</h5>
+                            <div class="data-row">
+                                <p class="mb-1"><strong>Student Responsibilities</strong></p>
+                                <p class="text-secondary mb-0">Thiết kế giao diện, triển khai responsive layout, và điều chỉnh nội dung theo yêu cầu thương hiệu Lotus Tech Solutions.</p>
+                            </div>
+                            <div class="data-row">
+                                <p class="mb-1"><strong>Company Responsibilities</strong></p>
+                                <p class="text-secondary mb-0">Cung cấp hướng dẫn thiết kế, nội dung thương hiệu, và phản hồi để hoàn thiện landing page.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card p-4 mb-4">
+                            <h5 class="section-title">Deliverables</h5>
+                            <div class="data-row">
+                                <p class="mb-1"><strong>Deliverable 1</strong></p>
+                                <p class="text-secondary mb-0">Fully responsive portal landing page, student dashboard, and company dashboard UI mockups.</p>
+                            </div>
+                            <div class="data-row">
+                                <p class="mb-1"><strong>Deliverable 2</strong></p>
+                                <p class="text-secondary mb-0">Interactive chat and contract management prototype with project tracking components.</p>
+                            </div>
+                            <div class="data-row">
+                                <p class="mb-1"><strong>Deliverable 3</strong></p>
+                                <p class="text-secondary mb-0">Final handoff package including documentation, design specifications, and a demo-ready static site.</p>
+                            </div>
+                        </div>
+
+                        <div class="status-card p-4 mb-4">
+                            <h5 class="section-title">Contract Status</h5>
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-4 bg-light">
+                                        <p class="text-secondary mb-2"><strong>Status</strong></p>
+                                        <p class="mb-0"><span class="badge bg-success bg-opacity-15 text-success status-pill">Active</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-4 bg-light">
+                                        <p class="text-secondary mb-2"><strong>Signed</strong></p>
+                                        <p class="mb-0"><span class="badge bg-success bg-opacity-15 text-success status-pill">Yes</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contract-footer mt-4">
+                                <div class="row g-3">
+                                    <div class="col-sm-6">
+                                        <div class="signature-box">
+                                            <p class="mb-1 text-secondary">Student Signature</p>
+                                            <p class="fw-semibold mb-0">Ngọc Hà</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="signature-box">
+                                            <p class="mb-1 text-secondary">Company Signature</p>
+                                            <p class="fw-semibold mb-0">BridgeTech Solutions</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="sidebar-card p-4 mb-4 summary-card">
+                            <h5 class="section-title">Contract Summary</h5>
+                            <p class="text-secondary mb-2"><strong>Project:</strong> SkillBridge Campus Portal</p>
+                            <p class="text-secondary mb-2"><strong>Budget:</strong> $7,500</p>
+                            <p class="text-secondary mb-2"><strong>Timeline:</strong> 8 weeks</p>
+                            <p class="text-secondary mb-2"><strong>Milestones:</strong> 4 review sessions</p>
+                            <p class="text-secondary mb-0"><strong>Next Step:</strong> Final design approval</p>
+                        </div>
+
+                        <div class="sidebar-card p-4 mb-4">
+                            <h5 class="section-title">Actions</h5>
+                            <div class="d-grid gap-3 contract-actions">
+                                <button class="btn btn-success btn-lg">Accept</button>
+                                <button class="btn btn-outline-danger btn-lg">Reject</button>
+                                <button class="btn btn-outline-primary btn-lg btn-outline-demo">Download PDF</button>
+                            </div>
+                        </div>
+
+                        <div class="sidebar-card p-4">
+                            <h5 class="section-title">Important Notes</h5>
+                            <ul class="list-unstyled text-secondary mb-0">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i>Contract is valid through July 31, 2026.</li>
+                                <li class="mb-3"><i class="bi bi-info-circle-fill text-info me-2"></i>Deliverables must be submitted before final review.</li>
+                                <li><i class="bi bi-clock-fill text-warning me-2"></i>Weekly progress reports required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

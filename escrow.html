@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrow Payment - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f3f6ff;
+            color: #102a43;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .page-card,
+        .summary-card,
+        .timeline-card,
+        .history-card,
+        .security-card {
+            border-radius: 28px;
+            background: #ffffff;
+            border: none;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        .status-pill {
+            border-radius: 999px;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.82rem;
+            letter-spacing: 0.02em;
+        }
+
+        .progress-bar {
+            border-radius: 999px;
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.4rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #2563eb;
+        }
+
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 1.3rem;
+            bottom: 0;
+            width: 2px;
+            background: rgba(37, 99, 235, 0.18);
+        }
+
+        .history-card .list-group-item {
+            border: none;
+            padding: 1rem 0;
+        }
+
+        .security-card .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            background: rgba(37, 99, 235, 0.12);
+            color: #2563eb;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .security-card .item-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .btn-primary {
+            border-radius: 999px;
+        }
+
+        @media (max-width: 767.98px) {
+            .timeline-step {
+                padding-left: 1.8rem;
+            }
+
+            .timeline-step::before,
+            .timeline-step::after {
+                left: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="page-card p-4 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="h3 fw-bold mb-2">Bảng quản lý Escrow</h1>
+                    <p class="text-muted mb-0">Theo dõi trạng thái escrow, tiến độ thanh toán và lịch sử giao dịch trong giao diện demo an toàn.</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <button class="btn btn-primary btn-lg"><i class="bi bi-cloud-arrow-down-fill me-2"></i> Giải ngân</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-xl-4">
+                <div class="summary-card p-4 mb-4">
+                    <h5 class="text-uppercase text-muted mb-3">Dự án</h5>
+                    <h4 class="fw-bold mb-1">Cổng quản lý SkillBridge</h4>
+                    <p class="text-secondary mb-3">Phát triển cổng an toàn cho việc kết nối sinh viên và doanh nghiệp cùng quản lý hợp đồng.</p>
+                    <div class="mb-3">
+                        <p class="mb-1 text-muted small">Ngân sách</p>
+                        <h5 class="fw-semibold">7.500 USD</h5>
+                    </div>
+                    <div class="mb-3">
+                        <p class="mb-1 text-muted small">Trạng thái Escrow</p>
+                        <span class="badge bg-info bg-opacity-15 text-info status-pill">Đang giữ tiền</span>
+                    </div>
+                    <div class="mb-3">
+                        <p class="mb-1 text-muted small">Tiến độ thanh toán</p>
+                        <div class="progress rounded-pill" style="height: 16px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 63%;" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <p class="small text-secondary mt-2 mb-0">4.725 USD đã giải ngân trong tổng 7.500 USD</p>
+                    </div>
+                    <div class="d-grid gap-2 mt-4">
+                        <button class="btn btn-outline-primary btn-lg">Download PDF</button>
+                        <button class="btn btn-outline-secondary btn-lg">View Contract</button>
+                    </div>
+                </div>
+
+                <div class="security-card p-4">
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                        <div class="icon-box"><i class="bi bi-shield-lock-fill"></i></div>
+                        <div>
+                            <h5 class="mb-1">Security Information</h5>
+                            <p class="text-secondary mb-0">Your escrow is protected by secure payment controls and milestone verification.</p>
+                        </div>
+                    </div>
+                    <div class="border-top mt-3 pt-3">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <p class="item-label mb-1">Verified Escrow</p>
+                                <p class="fw-semibold mb-0">256-bit encryption</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <p class="item-label mb-1">Payment Protection</p>
+                                <p class="fw-semibold mb-0">Release on approval</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <p class="item-label mb-1">Audit Trail</p>
+                                <p class="fw-semibold mb-0">Complete transaction logs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8">
+                <div class="history-card p-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h5 class="mb-1">Transaction History</h5>
+                            <p class="text-muted mb-0">Recent payment activity and milestone releases.</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-15 text-primary status-pill">Latest Update</span>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <h6 class="mb-1">Milestone 2 Release</h6>
+                                    <p class="text-secondary mb-0">Approved by Company</p>
+                                </div>
+                                <span class="text-success fw-semibold">+$2,500</span>
+                            </div>
+                            <small class="text-muted">June 25, 2026</small>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <h6 class="mb-1">Initial Escrow Deposit</h6>
+                                    <p class="text-secondary mb-0">Payment secured in escrow</p>
+                                </div>
+                                <span class="text-primary fw-semibold">+$7,500</span>
+                            </div>
+                            <small class="text-muted">June 1, 2026</small>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <div>
+                                    <h6 class="mb-1">Milestone 1 Release</h6>
+                                    <p class="text-secondary mb-0">Project kickoff payment</p>
+                                </div>
+                                <span class="text-success fw-semibold">+$1,225</span>
+                            </div>
+                            <small class="text-muted">June 10, 2026</small>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="timeline-card p-4 mb-4">
+                    <h5 class="mb-3">Payment Timeline</h5>
+                    <div class="timeline-step">
+                        <p class="text-muted small mb-1">June 1, 2026</p>
+                        <h6 class="mb-1">Đã cấp vốn Escrow</h6>
+                        <p class="text-secondary mb-0">Khách hàng đã chuyển ngân sách dự án vào Escrow.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <p class="text-muted small mb-1">June 10, 2026</p>
+                        <h6 class="mb-1">Mốc 1 được phê duyệt</h6>
+                        <p class="text-secondary mb-0">Phần thanh toán đầu tiên đã được giải ngân sau khi duyệt.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <p class="text-muted small mb-1">June 25, 2026</p>
+                        <h6 class="mb-1">Mốc 2 được phê duyệt</h6>
+                        <p class="text-secondary mb-0">Thanh toán mốc 2 đã được giải ngân cho sinh viên.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <p class="text-muted small mb-1">July 15, 2026</p>
+                        <h6 class="mb-1">Đang chờ duyệt cuối cùng</h6>
+                        <p class="text-secondary mb-0">Giải ngân số tiền còn lại sau khi duyệt hợp đồng cuối cùng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
