@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Badges - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f4f7ff;
+            color: #0f172a;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .hero-card,
+        .stat-card,
+        .badge-card,
+        .timeline-card,
+        .recommendation-card {
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+            border: none;
+        }
+
+        .avatar-circle {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            background: #2563eb;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        .badge-pill {
+            border-radius: 999px;
+            padding: 0.4rem 0.85rem;
+            font-size: 0.82rem;
+        }
+
+        .badge-card {
+            overflow: hidden;
+        }
+
+        .badge-card .icon-box {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(37, 99, 235, 0.12);
+            color: #2563eb;
+            font-size: 1.6rem;
+        }
+
+        .timeline-step {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-step::before {
+            content: '';
+            position: absolute;
+            left: 0.7rem;
+            top: 0.3rem;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #2563eb;
+        }
+
+        .timeline-step::after {
+            content: '';
+            position: absolute;
+            left: 0.77rem;
+            top: 1.2rem;
+            bottom: 0;
+            width: 2px;
+            background: rgba(37, 99, 235, 0.15);
+        }
+
+        .recommendation-card {
+            border-left: 4px solid #2563eb;
+        }
+
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 1.75rem 0;
+            color: #64748b;
+        }
+
+        @media (max-width: 767.98px) {
+            .timeline-step {
+                padding-left: 1.8rem;
+            }
+
+            .timeline-step::before,
+            .timeline-step::after {
+                left: 0.55rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="index.html">SkillBridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">Badges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#badge-categories">Categories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#timeline">Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recommendations">Recommendations</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="hero-card p-4 mb-4">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-8">
+                    <h1 class="fw-bold">Skill Badge Dashboard</h1>
+                    <p class="text-muted mb-0">Track earned badges, level progress, and next achievements with a clean student profile experience.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-outline-primary btn-sm me-2">Share Badge</a>
+                    <a href="#" class="btn btn-primary btn-sm">Download Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-xl-4">
+                <div class="stat-card p-4 mb-4">
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="avatar-circle">NH</div>
+                        <div>
+                            <h4 class="mb-1">Ngọc Hà</h4>
+                            <p class="text-secondary mb-1">Student Profile</p>
+                            <p class="mb-0"><span class="badge bg-primary bg-opacity-10 text-primary badge-pill">Software Engineering</span></p>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-secondary">Total Badges</span>
+                            <span class="fw-semibold">18</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-secondary">Level</span>
+                            <span class="fw-semibold">Advanced</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-secondary">Progress</span>
+                            <span class="fw-semibold">72%</span>
+                        </div>
+                        <div class="progress rounded-pill" style="height: 14px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 72%;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <h6 class="mb-3">Badge Summary</h6>
+                        <p class="text-secondary mb-0">Keep earning badges across categories to unlock higher levels, certificates, and recommended career paths.</p>
+                    </div>
+                </div>
+
+                <div class="stat-card p-4 mb-4" id="badge-categories">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5 class="mb-0">Badge Categories</h5>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">5 tracked</span>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex justify-content-between align-items-center p-3 rounded-4 bg-light">
+                            <div>
+                                <h6 class="mb-1">Programming</h6>
+                                <small class="text-muted">8 badges earned</small>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Active</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center p-3 rounded-4 bg-light">
+                            <div>
+                                <h6 class="mb-1">Design</h6>
+                                <small class="text-muted">4 badges earned</small>
+                            </div>
+                            <span class="badge bg-info bg-opacity-10 text-info">Growing</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center p-3 rounded-4 bg-light">
+                            <div>
+                                <h6 class="mb-1">Marketing</h6>
+                                <small class="text-muted">2 badges earned</small>
+                            </div>
+                            <span class="badge bg-warning bg-opacity-10 text-warning">New</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center p-3 rounded-4 bg-light">
+                            <div>
+                                <h6 class="mb-1">Data Analysis</h6>
+                                <small class="text-muted">3 badges earned</small>
+                            </div>
+                            <span class="badge bg-success bg-opacity-10 text-success">Strong</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center p-3 rounded-4 bg-light">
+                            <div>
+                                <h6 class="mb-1">Communication</h6>
+                                <small class="text-muted">5 badges earned</small>
+                            </div>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary">Balanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-8">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="badge-card p-4">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="icon-box"><i class="bi bi-code-slash"></i></div>
+                                <div>
+                                    <h5 class="mb-1">JavaScript Mastery</h5>
+                                    <span class="badge bg-primary bg-opacity-10 text-primary badge-pill">Level 4</span>
+                                </div>
+                            </div>
+                            <p class="text-secondary mb-2">Earned on: <strong>May 14, 2026</strong></p>
+                            <p class="text-secondary">Demonstrated ability to build modern interactive web experiences using JavaScript, DOM manipulation, and asynchronous APIs.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <button class="btn btn-outline-primary btn-sm">Share Badge</button>
+                                <button class="btn btn-primary btn-sm">Download Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="badge-card p-4">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="icon-box"><i class="bi bi-brush"></i></div>
+                                <div>
+                                    <h5 class="mb-1">UX Design Fundamentals</h5>
+                                    <span class="badge bg-info bg-opacity-10 text-info badge-pill">Level 3</span>
+                                </div>
+                            </div>
+                            <p class="text-secondary mb-2">Earned on: <strong>March 28, 2026</strong></p>
+                            <p class="text-secondary">Recognized for building accessible user interfaces and wireframes that follow modern usability principles.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <button class="btn btn-outline-primary btn-sm">Share Badge</button>
+                                <button class="btn btn-primary btn-sm">Download Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="badge-card p-4">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="icon-box"><i class="bi bi-bar-chart-line"></i></div>
+                                <div>
+                                    <h5 class="mb-1">Data Analysis Pro</h5>
+                                    <span class="badge bg-success bg-opacity-10 text-success badge-pill">Level 4</span>
+                                </div>
+                            </div>
+                            <p class="text-secondary mb-2">Earned on: <strong>January 16, 2026</strong></p>
+                            <p class="text-secondary">Validated skills in dataset cleaning, visualization, and interpreting analytics for actionable business insights.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <button class="btn btn-outline-primary btn-sm">Share Badge</button>
+                                <button class="btn btn-primary btn-sm">Download Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="badge-card p-4">
+                            <div class="d-flex align-items-start gap-3 mb-3">
+                                <div class="icon-box"><i class="bi bi-chat-dots"></i></div>
+                                <div>
+                                    <h5 class="mb-1">Communication Star</h5>
+                                    <span class="badge bg-secondary bg-opacity-10 text-secondary badge-pill">Level 2</span>
+                                </div>
+                            </div>
+                            <p class="text-secondary mb-2">Earned on: <strong>February 10, 2026</strong></p>
+                            <p class="text-secondary">Awarded for leading team discussions, delivering clear presentations, and receiving peer recognition for communication.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <button class="btn btn-outline-primary btn-sm">Share Badge</button>
+                                <button class="btn btn-primary btn-sm">Download Certificate</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card p-4 mt-4" id="timeline">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h5 class="mb-0">Achievement Timeline</h5>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">2026</span>
+                    </div>
+                    <div class="timeline-step">
+                        <h6 class="mb-1">JavaScript Mastery</h6>
+                        <small class="text-muted">May 14, 2026</small>
+                        <p class="text-secondary mb-0">Completed advanced JavaScript projects and interactive web experiences.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <h6 class="mb-1">UX Design Fundamentals</h6>
+                        <small class="text-muted">March 28, 2026</small>
+                        <p class="text-secondary mb-0">Achieved proficiency in layout, accessibility, and user-centered design.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <h6 class="mb-1">Data Analysis Pro</h6>
+                        <small class="text-muted">January 16, 2026</small>
+                        <p class="text-secondary mb-0">Delivered data-driven insights through charts and reporting dashboards.</p>
+                    </div>
+                    <div class="timeline-step">
+                        <h6 class="mb-1">Communication Star</h6>
+                        <small class="text-muted">February 10, 2026</small>
+                        <p class="text-secondary mb-0">Recognized for collaborative leadership and effective team communication.</p>
+                    </div>
+                </div>
+
+                <div class="recommendation-card p-4 mt-4" id="recommendations">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                            <h5 class="mb-1">Recommended Next Badge</h5>
+                            <p class="text-secondary mb-0">Pick your next achievement to continue building a balanced, professional portfolio.</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">Next up</span>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-4 bg-light">
+                                <h6 class="mb-1">Leadership Impact</h6>
+                                <p class="text-secondary mb-2">Level 3</p>
+                                <p class="text-secondary small mb-0">Lead a team initiative and mentor peers to earn a leadership achievement badge.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-3 rounded-4 bg-light">
+                                <h6 class="mb-1">Marketing Strategy</h6>
+                                <p class="text-secondary mb-2">Level 2</p>
+                                <p class="text-secondary small mb-0">Create a campaign plan with measurable KPIs and brand storytelling.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-end">
+                        <a href="#" class="btn btn-outline-primary">Explore Next Badge</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <div>
+                <p class="mb-0">SkillBridge badge demo. Static UI prototype for student achievement tracking.</p>
+            </div>
+            <div>
+                <a class="me-3 text-decoration-none" href="#">Privacy</a>
+                <a class="text-decoration-none" href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

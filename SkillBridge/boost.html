@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Job - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background: #f4f7ff;
+            color: #102a43;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .hero-card,
+        .feature-card,
+        .summary-card,
+        .preview-card,
+        .pricing-card,
+        .benefit-card {
+            border-radius: 28px;
+            background: #ffffff;
+            border: none;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        .badge-pill {
+            border-radius: 999px;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.03em;
+        }
+
+        .feature-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(37, 99, 235, 0.12);
+            color: #2563eb;
+            font-size: 1.45rem;
+        }
+
+        .preview-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-card::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 180px;
+            height: 180px;
+            background: rgba(37, 99, 235, 0.08);
+            border-radius: 50%;
+        }
+
+        .line-highlight {
+            width: 64px;
+            height: 4px;
+            background: #2563eb;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card {
+            border: 1px solid #e2e8f0;
+        }
+
+        .benefit-card {
+            transition: transform 0.2s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .btn-purchase {
+            border-radius: 999px;
+            padding: 0.95rem 1.5rem;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.8rem;
+            color: #2563eb;
+        }
+
+        @media (max-width: 767.98px) {
+            .preview-card::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <section class="hero-card p-5 mb-5 text-center">
+            <span class="section-title d-inline-block mb-3">Boost Job</span>
+            <h1 class="fw-bold mb-3">Tăng độ nổi bật dự án và đến gần đối tác tuyển dụng nhanh hơn.</h1>
+            <p class="text-secondary mb-4">Boost Job giúp sinh viên và doanh nghiệp nâng tầm hiển thị, có phản hồi nhanh và nổi bật giữa thị trường sôi động.</p>
+            <button class="btn btn-primary btn-lg btn-purchase">Mua Boost</button>
+        </section>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-6">
+                <div class="feature-card p-4 h-100">
+                    <div class="line-highlight"></div>
+                    <h4 class="fw-bold mb-3">Boost Job là gì?</h4>
+                    <p class="text-secondary">Boost Job là tính năng quảng bá cao cấp giúp đưa danh sách dự án của bạn lên đầu kết quả tìm kiếm và đề xuất, tiếp cận đúng sinh viên và doanh nghiệp nhanh hơn.</p>
+                    <ul class="list-unstyled text-secondary mt-4">
+                        <li class="mb-3"><i class="bi bi-arrow-up-right-circle-fill text-primary me-2"></i>Ưu tiên xuất hiện trong danh sách</li>
+                        <li class="mb-3"><i class="bi bi-eye-fill text-primary me-2"></i>Tăng hiển thị trên toàn nền tảng</li>
+                        <li class="mb-3"><i class="bi bi-people-fill text-primary me-2"></i>Tạo thêm tương tác từ kết nối chất lượng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pricing-card p-4 h-100">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="fw-bold mb-1">Bảng giá Boost</h4>
+                            <p class="text-secondary mb-0">Gói khuyến mãi linh hoạt cho mọi nhu cầu.</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-15 text-primary badge-pill">Được đề xuất</span>
+                    </div>
+                    <div class="row gy-3">
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 bg-light">
+                                <p class="text-muted mb-1 small">Thời lượng</p>
+                                <h5 class="mb-0">7 ngày</h5>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded-4 bg-light">
+                                <p class="text-muted mb-1 small">Ước tính tiếp cận</p>
+                                <h5 class="mb-0">1,200+</h5>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3 rounded-4 bg-light">
+                                <p class="text-muted mb-1 small">Ngân sách</p>
+                                <h5 class="mb-0">49 đô la</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-secondary mb-1"><strong>Phù hợp cho:</strong> Sinh viên và doanh nghiệp cần phản hồi nhanh hơn và vị trí nổi bật trên SkillBridge.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4">
+                <div class="benefit-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3"><i class="bi bi-lightning-fill"></i></div>
+                        <div>
+                            <h5 class="mb-0">Kết nối nhanh hơn</h5>
+                        </div>
+                    </div>
+                    <p class="text-secondary">Đưa dự án của bạn lên đầu feed để tài năng và đội tuyển dụng chú ý nhanh hơn.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="benefit-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3"><i class="bi bi-bar-chart-line-fill"></i></div>
+                        <div>
+                            <h5 class="mb-0">Tăng hiển thị</h5>
+                        </div>
+                    </div>
+                    <p class="text-secondary">Boost Job tăng khả năng hiển thị dự án của bạn trên toàn nền tảng với vị trí premium.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="benefit-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="feature-icon me-3"><i class="bi bi-patch-check-fill"></i></div>
+                        <div>
+                            <h5 class="mb-0">Kết quả tin cậy</h5>
+                        </div>
+                    </div>
+                    <p class="text-secondary">Trình bày dự án của bạn với độ tin cậy cao bằng huy hiệu quảng bá và danh sách premium.</p>
+                </div>
+                <div class="preview-card p-4 h-100">
+                    <h4 class="fw-bold mb-3">Xem trước</h4>
+                    <p class="text-secondary mb-4">Xem trước cách danh sách dự án được tăng cường hiển thị với sinh viên và nhà tuyển dụng trong mục đề xuất.</p>
+                    <div class="p-4 rounded-4 bg-light">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <h5 class="mb-1">Cổng SkillBridge</h5>
+                                <p class="text-muted mb-0">Dự án được quảng bá - Boost Job đang hoạt động</p>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-15 text-primary">Đã Boost</span>
+                        </div>
+                        <div class="d-flex flex-column gap-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <span class="badge bg-success bg-opacity-15 text-success">Lượt tiếp cận cao</span>
+                                <span class="badge bg-info bg-opacity-15 text-info">Nổi bật</span>
+                            </div>
+                            <p class="text-secondary mb-0">Tiếp cận nhiều sinh viên phù hợp hơn với danh sách nổi bật, lời kêu gọi premium và vị trí ưu tiên.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="summary-card p-4 h-100">
+                    <h4 class="fw-bold mb-3">Thông tin nhanh</h4>
+                    <ul class="list-unstyled text-secondary mb-4">
+                        <li class="mb-3"><strong>Thời gian:</strong> 7 ngày</li>
+                        <li class="mb-3"><strong>Ước tính tiếp cận:</strong> 1.200+ lượt xem</li>
+                        <li class="mb-3"><strong>Giá:</strong> 49 đô la</li>
+                        <li><strong>Đảm bảo:</strong> Vị trí premium và hiển thị được tăng cường.</li>
+                    </ul>
+                    <button class="btn btn-primary btn-lg btn-purchase w-100">Mua Boost</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="faq-card p-4">
+            <h4 class="fw-bold mb-4">Câu hỏi thường gặp về Boost Job</h4>
+            <div class="accordion" id="boostFaq">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Boost Job cải thiện khả năng hiển thị như thế nào?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="faqOne" data-bs-parent="#boostFaq">
+                        <div class="accordion-body text-secondary">
+                            Boost Job đưa dự án của bạn lên cao hơn trong feed và cơ chế đề xuất, tăng cơ hội được tìm thấy giữa sinh viên và doanh nghiệp.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Đây có phải là đăng ký định kỳ không?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#boostFaq">
+                        <div class="accordion-body text-secondary">
+                            Demo này không kết nối backend, nhưng Boost Job được trình bày như gói mua một lần cho thời lượng đã chọn.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faqThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Công ty và sinh viên có thể dùng Boost Job không?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#boostFaq">
+                        <div class="accordion-body text-secondary">
+                            Có, Boost Job phù hợp cho cả sinh viên tìm dự án và doanh nghiệp muốn nổi bật cơ hội tuyển dụng.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

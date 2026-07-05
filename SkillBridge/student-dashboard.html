@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --bg: #f3f7ff;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6c757d;
+            --primary: #0d6efd;
+            --shadow: 0 24px 50px rgba(15, 23, 42, 0.06);
+            color-scheme: light;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 25%),
+                var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+        }
+
+        .sidebar {
+            min-height: 100vh;
+            border-right: 1px solid rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar .nav-link {
+            color: var(--muted);
+            font-weight: 600;
+            padding: 0.95rem 1rem;
+            border-radius: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            background: rgba(13, 110, 253, 0.08);
+            color: var(--primary);
+        }
+
+        .topbar {
+            background: transparent;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        .topbar .form-control {
+            border-radius: 999px;
+            box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+        }
+
+        .card-soft {
+            background: #ffffff;
+            border: none;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .badge-soft {
+            background: rgba(13, 110, 253, 0.08);
+            color: var(--primary);
+            border-radius: 999px;
+            padding: 0.4rem 0.85rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .avatar-sm {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .progress-mini {
+            height: 8px;
+            border-radius: 999px;
+        }
+
+        .table thead th {
+            border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+        }
+
+        .table tbody tr:hover {
+            background: rgba(13, 110, 253, 0.04);
+        }
+
+        .badge-pill {
+            border-radius: 999px;
+            padding: 0.55rem 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .footer-dashboard {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 991.98px) {
+            .sidebar {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row g-0">
+            <aside class="col-lg-3 col-xl-2 sidebar px-4 py-4 d-flex flex-column">
+                <div class="mb-5">
+                    <a href="index.html" class="text-decoration-none d-flex align-items-center gap-2 mb-4">
+                        <div class="avatar-sm bg-primary bg-opacity-15 text-primary"><i class="bi bi-bridge"></i></div>
+                        <div>
+                            <h5 class="mb-0 fw-bold">SkillBridge</h5>
+                            <small class="text-muted">Student Hub</small>
+                        </div>
+                    </a>
+                </div>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="#"><i class="bi bi-grid-fill me-2"></i>Dashboard</a>
+                    <a class="nav-link" href="#projects"><i class="bi bi-kanban-fill me-2"></i>My Projects</a>
+                    <a class="nav-link" href="#portfolio"><i class="bi bi-folder2-open-fill me-2"></i>Portfolio</a>
+                    <a class="nav-link" href="#skills"><i class="bi bi-patch-check-fill me-2"></i>Skill Badge</a>
+                    <a class="nav-link" href="#matching"><i class="bi bi-robot-fill me-2"></i>AI Matching</a>
+                    <a class="nav-link" href="#messages"><i class="bi bi-chat-left-text-fill me-2"></i>Messages</a>
+                    <a class="nav-link" href="#settings"><i class="bi bi-gear-fill me-2"></i>Settings</a>
+                    <a class="nav-link text-danger mt-3" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+                </nav>
+                <div class="mt-auto pt-4 small footer-dashboard">
+                    <p class="mb-1">Demo website only.</p>
+                    <p class="mb-0">Không có backend, chỉ UI demo.</p>
+                </div>
+            </aside>
+
+            <main class="col-lg-9 col-xl-10 px-4 py-4">
+                <div class="topbar d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 px-3 py-3 mb-4">
+                    <form class="w-100 w-md-50">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                            <input type="search" class="form-control border-start-0" placeholder="Search projects, skills, companies">
+                        </div>
+                    </form>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="btn btn-outline-secondary rounded-circle p-2" type="button">
+                            <i class="bi bi-bell-fill"></i>
+                        </button>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="avatar-sm">NV</div>
+                            <div class="d-none d-sm-block">
+                                <p class="mb-0 text-muted small">Nguyễn Văn A</p>
+                                <strong>Student</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-xl-8">
+                        <div class="card card-soft p-4 mb-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-start">
+                                <div>
+                                    <span class="badge-soft">SkillBridge</span>
+                                    <h2 class="mt-3 mb-2">Xin chào, Nguyễn Văn An</h2>
+                                    <p class="text-muted mb-0">Học viện Chính sách và Phát triển • Khoa Kinh tế số • Chuyên ngành Kinh tế và Kinh doanh số • Năm tốt nghiệp 2027.</p>
+                                </div>
+                                <div class="text-md-end">
+                                    <button class="btn btn-primary">Explore Projects</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6 col-xl-3">
+                                <div class="card card-soft p-4 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="badge-soft">GPA</div>
+                                        <i class="bi bi-mortarboard-fill text-primary fs-4"></i>
+                                    </div>
+                                    <h3 class="mb-1">3.65</h3>
+                                    <p class="text-muted mb-0">GPA / 4.00</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3">
+                                <div class="card card-soft p-4 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="badge-soft">Dự án</div>
+                                        <i class="bi bi-kanban-fill text-success fs-4"></i>
+                                    </div>
+                                    <h3 class="mb-1">8</h3>
+                                    <p class="text-muted mb-0">Projects Completed</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3">
+                                <div class="card card-soft p-4 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="badge-soft">Portfolio</div>
+                                        <i class="bi bi-folder2-open-fill text-warning fs-4"></i>
+                                    </div>
+                                    <h3 class="mb-1">85%</h3>
+                                    <p class="text-muted mb-0">Portfolio Completion</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-xl-3">
+                                <div class="card card-soft p-4 h-100">
+                                    <div class="d-flex align-items-center justify-content-between mb-3">
+                                        <div class="badge-soft">AI Matching</div>
+                                        <i class="bi bi-robot-fill text-warning fs-4"></i>
+                                    </div>
+                                    <h3 class="mb-1">92%</h3>
+                                    <p class="text-muted mb-0">AI Matching Score</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-soft p-4 mb-4" id="matching">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="mb-1">AI Matching Progress</h5>
+                                    <p class="text-muted mb-0">Dự án được đề xuất dựa trên kỹ năng và hồ sơ của bạn.</p>
+                                </div>
+                                <span class="badge-pill bg-primary bg-opacity-15 text-primary">92%</span>
+                            </div>
+                            <div class="progress progress-mini mb-4">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 92%;" aria-valuenow="92"
+                                    aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h6 class="mb-2">Recommended Project</h6>
+                                    <h4 class="mb-1">Frontend Developer</h4>
+                                    <p class="text-muted mb-0">Độ phù hợp 92% với kỹ năng HTML, CSS và JavaScript của bạn.</p>
+                                </div>
+                                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                    <button class="btn btn-outline-primary">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card card-soft p-4 mb-4" id="projects">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="mb-1">Recent Projects</h5>
+                                    <p class="text-muted mb-0">Danh sách các dự án bạn đã tham gia hoặc đang theo dõi.</p>
+                                </div>
+                                <span class="badge-pill bg-success bg-opacity-15 text-success">5 Active</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Project</th>
+                                            <th>Company</th>
+                                            <th>Status</th>
+                                            <th>Payment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Thiết kế Landing Page</td>
+                                            <td>Lotus Tech Solutions</td>
+                                            <td><span class="badge bg-info bg-opacity-15 text-info">In Progress</span></td>
+                                            <td>2,000,000 VNĐ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dashboard Tableau</td>
+                                            <td>Minh Phát Media</td>
+                                            <td><span class="badge bg-success bg-opacity-15 text-success">Completed</span></td>
+                                            <td>3,200,000 VNĐ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Quản lý Fanpage Facebook</td>
+                                            <td>Green Marketing Agency</td>
+                                            <td><span class="badge bg-warning bg-opacity-15 text-warning">Review</span></td>
+                                            <td>2,500,000 VNĐ</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Viết nội dung Website</td>
+                                            <td>ABC Digital</td>
+                                            <td><span class="badge bg-info bg-opacity-15 text-info">In Progress</span></td>
+                                            <td>2,200,000 VNĐ</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-xl-4">
+                        <div class="card card-soft p-4 mb-4" id="portfolio">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="mb-1">Portfolio Completion</h5>
+                                    <p class="text-muted mb-0">Giữ hồ sơ của bạn luôn mới và ấn tượng với nhà tuyển dụng.</p>
+                                </div>
+                                <span class="badge-pill bg-primary bg-opacity-15 text-primary">85%</span>
+                            </div>
+                            <div class="progress progress-mini mb-4">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%;"></div>
+                            </div>
+                            <button class="btn btn-outline-primary w-100">Edit Portfolio</button>
+                        </div>
+
+                        <div class="card card-soft p-4 mb-4" id="skills">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="mb-1">Skill Badges</h5>
+                                    <p class="text-muted mb-0">Các kỹ năng quan trọng giúp profile của bạn nổi bật.</p>
+                                </div>
+                                <span class="badge-pill bg-secondary bg-opacity-15 text-secondary">Top Skills</span>
+                            </div>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge-pill bg-primary bg-opacity-15 text-primary">HTML</span>
+                                <span class="badge-pill bg-info bg-opacity-15 text-info">CSS</span>
+                                <span class="badge-pill bg-warning bg-opacity-15 text-warning">JavaScript</span>
+                                <span class="badge-pill bg-success bg-opacity-15 text-success">UI/UX</span>
+                            </div>
+                        </div>
+
+                        <div class="card card-soft p-4" id="messages">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <div>
+                                    <h5 class="mb-1">Recent Messages</h5>
+                                    <p class="text-muted mb-0">3 cuộc hội thoại mới từ doanh nghiệp và mentor.</p>
+                                </div>
+                                <span class="badge-pill bg-primary bg-opacity-15 text-primary">3 New</span>
+                            </div>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item px-0 py-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-sm bg-primary bg-opacity-15 text-primary">BT</div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <h6 class="mb-1">Lotus Tech</h6>
+                                                <small class="text-muted">2h ago</small>
+                                            </div>
+                                            <p class="mb-0 text-muted">Cảm ơn bạn đã ứng tuyển. Bạn có thể tham gia phỏng vấn vào thứ Hai lúc 9h không?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item px-0 py-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-sm bg-success bg-opacity-15 text-success">HN</div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <h6 class="mb-1">Mentor</h6>
+                                                <small class="text-muted">5h ago</small>
+                                            </div>
+                                            <p class="mb-0 text-muted">Đã hoàn thành dự án Dashboard Tableau và nhận Skill Badge Data Analytics.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group-item px-0 py-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <div class="avatar-sm bg-warning bg-opacity-15 text-warning">LN</div>
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <h6 class="mb-1">Lan Nhi</h6>
+                                                <small class="text-muted">1d ago</small>
+                                            </div>
+                                            <p class="mb-0 text-muted">Có cơ hội việc làm mới phù hợp với skill của bạn, xem chi tiết nhé.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

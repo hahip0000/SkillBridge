@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: #f3f6ff;
+            color: #1f2937;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .navbar-brand {
+            color: #2563EB !important;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        .navbar-nav .nav-link {
+            color: #475569 !important;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #2563EB !important;
+        }
+
+        .hero-card {
+            border-radius: 28px;
+            background: #ffffff;
+            box-shadow: 0 24px 70px rgba(37, 99, 235, 0.08);
+        }
+
+        .search-card {
+            border-radius: 24px;
+            background: #ffffff;
+            box-shadow: 0 18px 40px rgba(37, 99, 235, 0.06);
+        }
+
+        .search-card .form-control,
+        .search-card .form-select {
+            border-radius: 12px;
+        }
+
+        .project-card {
+            border: none;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 30px 70px rgba(37, 99, 235, 0.14);
+        }
+
+        .project-card img {
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .project-card .badge {
+            font-size: 0.78rem;
+            border-radius: 999px;
+            padding: 0.55rem 0.85rem;
+        }
+
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563EB;
+            font-size: 0.78rem;
+            margin-right: 0.35rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .project-meta {
+            color: #475569;
+            font-size: 0.92rem;
+        }
+
+        .pagination .page-item .page-link {
+            border-radius: 12px;
+            min-width: 42px;
+            color: #2563EB;
+        }
+
+        .pagination .page-item.active .page-link {
+            background: #2563EB;
+            border-color: #2563EB;
+            color: #ffffff;
+        }
+
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #e2e8f0;
+            padding: 2.5rem 0;
+            color: #475569;
+        }
+
+        .footer a {
+            color: #475569;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #2563EB;
+        }
+
+        @media (max-width: 767.98px) {
+            .project-card img {
+                height: 170px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SkillBridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="projects.html">Dự án</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Doanh nghiệp</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tin nhắn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Hồ sơ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="hero-card p-5 mb-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-primary bg-opacity-10 text-primary mb-3">Chợ dự án</span>
+                    <h1 class="fw-bold">Tìm dự án phù hợp với kỹ năng của bạn</h1>
+                    <p class="text-secondary mb-0">Duyệt dự án tuyển dụng thực tế, so sánh ngân sách và thời gian, và kết nối với doanh nghiệp phù hợp. Giao diện được thiết kế chuẩn Bootstrap 5.</p>
+                </div>
+                <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+                    <div class="d-inline-flex align-items-center gap-3 p-3 rounded-4 border border-primary border-opacity-10 bg-primary bg-opacity-10">
+                        <div class="fs-3 text-primary"><i class="bi bi-lightning-charge-fill"></i></div>
+                        <div class="text-start">
+                            <p class="mb-1 text-uppercase text-muted small">AI Matching</p>
+                            <h4 class="mb-0">92%+ phù hợp</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-card p-4 mb-5">
+            <div class="row g-3 align-items-end">
+                <div class="col-lg-5">
+                    <label class="form-label text-secondary">Tìm dự án</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                        <input type="text" class="form-control border-start-0" placeholder="Tìm theo tiêu đề, công ty hoặc kỹ năng">
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <label class="form-label text-secondary">Danh mục</label>
+                    <select class="form-select">
+                        <option selected>Tất cả</option>
+                        <option>Web</option>
+                        <option>Thiết kế</option>
+                        <option>Dữ liệu</option>
+                        <option>Marketing</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <label class="form-label text-secondary">Kỹ năng</label>
+                    <select class="form-select">
+                        <option selected>Tất cả</option>
+                        <option>JavaScript</option>
+                        <option>Figma</option>
+                        <option>Python</option>
+                        <option>SQL</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-1">
+                    <label class="form-label text-secondary">Ngân sách</label>
+                    <select class="form-select">
+                        <option selected>Bất kỳ</option>
+                        <option>Thấp</option>
+                        <option>Trung bình</option>
+                        <option>Cao</option>
+                    </select>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <label class="form-label text-secondary">Công ty</label>
+                    <select class="form-select">
+                        <option selected>Tất cả</option>
+                        <option>Lotus Tech Solutions</option>
+                        <option>EduZone</option>
+                        <option>VentureLab</option>
+                        <option>SmartTech</option>
+                    </select>
+                </div>
+                <div class="col-lg-12 text-end">
+                    <button class="btn btn-primary px-5">Tìm kiếm</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/project1.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Từ xa</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">92% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Nền tảng quản lý học tập</h5>
+                        <p class="project-meta mb-2">BlueTech • $8,500 • 8 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">JavaScript</span>
+                            <span class="skill-pill">React</span>
+                            <span class="skill-pill">UI/UX</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/project2.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Kết hợp</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">88% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Chiến dịch làm mới thương hiệu</h5>
+                        <p class="project-meta mb-2">EduZone • $5,200 • 5 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">Figma</span>
+                            <span class="skill-pill">Branding</span>
+                            <span class="skill-pill">Copywriting</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/placeholder.svg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Từ xa</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">95% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Bảng điều khiển phân tích dữ liệu</h5>
+                        <p class="project-meta mb-2">VentureLab • $12,000 • 10 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Dashboard</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/company1.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Kết hợp</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">84% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Kế hoạch tăng trưởng hiệu suất</h5>
+                        <p class="project-meta mb-2">SmartTech • $6,800 • 7 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">SEO</span>
+                            <span class="skill-pill">Analytics</span>
+                            <span class="skill-pill">Strategy</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/company2.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Từ xa</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">91% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Nâng cấp cổng thành viên</h5>
+                        <p class="project-meta mb-2">BlueTech • $9,900 • 9 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">React</span>
+                            <span class="skill-pill">API</span>
+                            <span class="skill-pill">Access Control</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/project1.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Kết hợp</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">87% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Đánh giá UX và làm mới</h5>
+                        <p class="project-meta mb-2">EduZone • $4,900 • 4 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">UX</span>
+                            <span class="skill-pill">Prototype</span>
+                            <span class="skill-pill">Research</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/project2.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Từ xa</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">89% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Bộ công cụ chiến lược tăng trưởng</h5>
+                        <p class="project-meta mb-2">SmartTech • $7,200 • 6 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">Strategy</span>
+                            <span class="skill-pill">Research</span>
+                            <span class="skill-pill">Analysis</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/placeholder.svg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Hybrid</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">93% phù hợp</span>
+                        </div>
+                        <h5 class="fw-semibold">Hệ thống phân tích dự đoán</h5>
+                        <p class="project-meta mb-2">VentureLab • $14,500 • 14 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">ML Ops</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-4">
+                <div class="card project-card h-100">
+                    <img src="assets/images/company1.jpg" class="card-img-top img-fluid" alt="Project image" style="max-width:100%;height:auto;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <span class="badge bg-primary bg-opacity-10 text-primary">Remote</span>
+                            <span class="badge bg-success bg-opacity-15 text-success">90% Match</span>
+                        </div>
+                        <h5 class="fw-semibold">MVP ứng dụng di động</h5>
+                        <p class="project-meta mb-2">BlueTech • $9,800 • 9 tuần</p>
+                        <div class="mb-3">
+                            <span class="skill-pill">Flutter</span>
+                            <span class="skill-pill">UX</span>
+                            <span class="skill-pill">API</span>
+                        </div>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="#" class="btn btn-sm btn-primary">Apply</a>
+                            <a href="#" class="btn btn-sm btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold">SkillBridge</h5>
+                    <p class="text-secondary">Chợ dự án demo cho sinh viên và doanh nghiệp. Xây dựng bằng Bootstrap 5, responsive và không có backend.</p>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="mb-3">Product</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Companies</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="mb-3">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="mb-3">Contact</h6>
+                    <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>hello@skillbridge.demo</p>
+                    <p class="mb-0"><i class="bi bi-geo-alt-fill me-2"></i>Hà Nội, Việt Nam</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

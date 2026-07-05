@@ -1,0 +1,161 @@
+/* Global styles */
+:root {
+    color-scheme: light;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #1f2937;
+    background: #eef4ff;
+}
+
+body {
+    background: #eef4ff;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+}
+
+.nav-link {
+    color: #334155 !important;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0d6efd !important;
+}
+
+.hero {
+    padding: 100px 0 80px;
+}
+
+.hero .display-5 {
+    line-height: 1.05;
+}
+
+.hero p.lead {
+    max-width: 560px;
+}
+
+.hero-card {
+    border: 1px solid rgba(13, 110, 253, 0.12);
+    background: #ffffff;
+}
+
+.feature-pill {
+    border: 1px solid rgba(13, 110, 253, 0.22);
+    border-radius: 999px;
+    padding: 0.85rem 1.15rem;
+    color: #0d6efd;
+    background: rgba(13, 110, 253, 0.06);
+    font-size: 0.95rem;
+}
+
+.stats-section {
+    padding: 60px 0;
+}
+
+.stat-card {
+    background: #f8fbff;
+    border: 1px solid rgba(13, 110, 253, 0.12);
+}
+
+.features-section {
+    padding: 70px 0;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #ffffff;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.icon-box {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto;
+    border-radius: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-section {
+    padding: 70px 0;
+}
+
+.process-card {
+    border: 1px solid rgba(13, 110, 253, 0.12);
+    background: #ffffff;
+}
+
+.badge-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: rgba(13, 110, 253, 0.12);
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+.feedback-section {
+    padding: 70px 0;
+}
+
+.feedback-card {
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+    font-weight: 700;
+}
+
+.footer-section {
+    background: linear-gradient(180deg, #0d6efd 0%, #2563eb 100%);
+}
+
+.footer-section p,
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-section .footer-link:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 991px) {
+    .hero {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero .display-5 {
+        font-size: 2.6rem;
+    }
+
+    .feature-card,
+    .process-card,
+    .stat-card,
+    .feedback-card {
+        border-radius: 28px;
+    }
+}

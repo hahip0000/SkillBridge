@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết dự án - SkillBridge</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body {
+            background: #f3f6ff;
+            color: #0f172a;
+            font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        .navbar-brand {
+            color: #2563eb !important;
+            font-weight: 700;
+        }
+
+        .banner {
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.15), rgba(37, 99, 235, 0.02)),
+                url('assets/images/placeholder.svg') center/cover no-repeat;
+            border-radius: 28px;
+            min-height: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.3);
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+        }
+
+        .banner .badge {
+            background: rgba(255, 255, 255, 0.18);
+            color: #f8fafc;
+        }
+
+        .project-card,
+        .detail-card,
+        .company-card,
+        .review-card,
+        .escrow-card {
+            border: none;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.08);
+            background: #ffffff;
+        }
+
+        .detail-card {
+            padding: 2rem;
+        }
+
+        .detail-card h1 {
+            font-size: clamp(2rem, 3vw, 2.75rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-pill {
+            border-radius: 999px;
+            padding: 0.55rem 0.95rem;
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            font-size: 0.84rem;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .progress-label {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .btn-group-sm .btn {
+            min-width: 130px;
+        }
+
+        .company-card .list-group-item {
+            border: none;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .review-card .review-star {
+            color: #f59e0b;
+        }
+
+        .review-card .text-secondary {
+            color: #64748b !important;
+        }
+
+        .back-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 767.98px) {
+            .banner {
+                min-height: 240px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-white bg-white border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SkillBridge</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Trang chủ</a></li>
+                                <li class="nav-item"><a class="nav-link" href="projects.html">Dự án</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Doanh nghiệp</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Tin nhắn</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Hồ sơ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="container banner-content pb-5">
+                <span class="badge badge-pill bg-white bg-opacity-10 text-white mb-3">Chi tiết dự án</span>
+                <h1 class="fw-bold">Nền tảng học tương tác</h1>
+                <p class="mb-3">Trang chi tiết này minh họa một dự án học trực tuyến chuyên nghiệp, thiết kế responsive với Bootstrap 5.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge badge-pill bg-primary bg-opacity-10 text-primary">Khớp AI 92%</span>
+                    <span class="badge badge-pill bg-success bg-opacity-10 text-success">Tiến độ 92%</span>
+                    <span class="badge badge-pill bg-secondary bg-opacity-10 text-secondary">Từ xa</span>
+                </div>
+            </div>
+
+        <div class="row gy-4">
+            <div class="col-xl-8">
+                <div class="detail-card mb-4">
+                    <div class="d-flex flex-column flex-md-row align-items-start justify-content-between gap-4 mb-4">
+                        <div>
+                            <p class="text-uppercase text-primary fw-semibold mb-2">BlueTech</p>
+                            <h1 class="mb-2">Nền tảng học tương tác</h1>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tag">Ngân sách 8,500 USD</span>
+                                <span class="tag">8 tuần</span>
+                                <span class="tag">Kết thúc: Q3</span>
+                                <span class="tag">Mức độ: Trung bình</span>
+                            </div>
+                        </div>
+                        <div class="text-md-end">
+                            <p class="text-secondary mb-1">Trạng thái dự án</p>
+                            <div class="progress rounded-pill" style="height: 14px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 92%;" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="progress-label mt-2 mb-0">92% hoàn thành theo tiến độ mốc</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="mb-3">Kỹ năng yêu cầu</h5>
+                        <div class="d-flex flex-wrap">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Tích hợp API</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h5 class="mb-3">Mô tả</h5>
+                        <p class="text-secondary">Dự án xây dựng một nền tảng học trực tuyến tương tác với hệ thống quản lý khóa học, giao diện người dùng đẹp và trải nghiệm học tập trực quan. Người tham gia sẽ phát triển các module khóa học, màn hình đăng ký, theo dõi tiến trình và dashboard báo cáo cho người dùng.</p>
+                        <p class="text-secondary">Mục tiêu là tạo ra một sản phẩm hoàn thiện, responsive, dễ mở rộng và tích hợp với backend giả định để quản lý nội dung học tập.</p>
+                    </div>
+
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-6">
+                            <div class="p-4 bg-light rounded-4">
+                                <h6 class="mb-3">Kết quả bàn giao</h6>
+                                <ul class="list-unstyled text-secondary mb-0">
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>UI responsive cho học viên và quản trị</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Module quản lý khóa học</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Dashboard báo cáo tiến độ</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-primary me-2"></i>Tích hợp giải pháp API</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 bg-light rounded-4">
+                                <h6 class="mb-3">Lợi ích</h6>
+                                <ul class="list-unstyled text-secondary mb-0">
+                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Nâng cao hiệu suất cá nhân</li>
+                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Tiếp cận dự án thực tế</li>
+                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Thực hành full-stack kỹ năng</li>
+                                    <li class="mb-2"><i class="bi bi-star-fill text-warning me-2"></i>Đảm bảo thanh toán an toàn</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+                        <a href="#" class="btn btn-primary btn-lg">Ứng tuyển ngay</a>
+                        <a href="#" class="btn btn-outline-secondary btn-lg">Chat với công ty</a>
+                        <a href="#" class="btn btn-outline-primary btn-lg">Lưu dự án</a>
+                        <a href="projects.html" class="btn btn-link text-primary fst-italic">Quay lại Dự án</a>
+                    </div>
+                </div>
+
+                <div class="escrow-card p-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                            <h5 class="mb-1">Thanh toán ký quỹ</h5>
+                            <p class="text-secondary mb-0">Thanh toán ký quỹ đảm bảo tiền được giữ an toàn cho đến khi công việc hoàn thành.</p>
+                        </div>
+                        <span class="badge bg-primary bg-opacity-10 text-primary">An toàn</span>
+                    </div>
+                    <div class="row g-3 text-secondary">
+                        <div class="col-6">
+                            <p class="mb-1 text-uppercase small">Mốc</p>
+                            <p class="mb-0">4 phases</p>
+                        </div>
+                        <div class="col-6">
+                            <p class="mb-1 text-uppercase small">Giải ngân</p>
+                            <p class="mb-0">Khi duyệt</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="mb-2 text-secondary">Phuong th?c n�y d?m b?o c? hai b�n c� s? tin c?y v� minh b?ch trong quy tr�nh thanh to�n.</p>
+                        <div class="progress rounded-pill" style="height: 12px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="company-card p-4 mb-4">
+                    <h5 class="mb-3">Thông tin công ty</h5>
+                    <div class="d-flex align-items-center gap-3 mb-4">
+                        <div class="rounded-4 bg-primary bg-opacity-10 text-primary d-flex align-items-center justify-content-center" style="width: 64px; height: 64px;">
+                            <i class="bi bi-building fs-3"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0">BlueTech</h6>
+                            <small class="text-secondary">Startup giáo dục</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary">BlueTech là công ty công nghệ giáo dục chuyên phát triển các giải pháp học trực tuyến hiện đại. Họ ưu tiên thiết kế trải nghiệm học thân thiện và quy trình thanh toán an toàn cho người dùng.</p>
+                    <ul class="list-group list-group-flush mt-4">
+                        <li class="list-group-item px-0 py-2 text-secondary"><strong>Địa điểm:</strong> Hà Nội, VN</li>
+                        <li class="list-group-item px-0 py-2 text-secondary"><strong>Số nhân viên:</strong> 120+</li>
+                        <li class="list-group-item px-0 py-2 text-secondary"><strong>Thành lập:</strong> 2020</li>
+                        <li class="list-group-item px-0 py-2 text-secondary"><strong>Phản hồi:</strong> Trong 24 giờ</li>
+                    </ul>
+                </div>
+
+                <div class="review-card p-4 mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div>
+                            <h5 class="mb-1">Đánh giá</h5>
+                            <p class="text-secondary mb-0">Đánh giá từ ứng viên đã tham gia dự án.</p>
+                        </div>
+                        <span class="badge bg-success bg-opacity-10 text-success">4.5/5</span>
+                    </div>
+                    <div class="review-star mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <div class="border-top pt-3">
+                        <div class="mb-3">
+                            <p class="mb-1 fw-semibold">Ngọc H</p>
+                            <p class="text-secondary mb-0">"Hướng dẫn rõ ràng và môi trường làm việc an toàn. Dự án phù hợp cho ai muốn tăng kỹ năng front-end."</p>
+                        </div>
+                        <div>
+                            <p class="mb-1 fw-semibold">Minh T</p>
+                            <p class="text-secondary mb-0">"Quy trình escrow giúp tôi cảm thấy yên tâm khi nhận dự án lớn. Khuyên người mới nên tham gia."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
