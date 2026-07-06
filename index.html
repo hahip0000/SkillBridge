@@ -14,8 +14,8 @@
         .hero-img-container {
             position: relative;
             overflow: hidden;
-            border-radius: 1.5rem; /* Tương đương rounded-4 */
-            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175); /* Tương đương shadow-lg */
+            border-radius: 1.5rem;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
             transition: transform 0.3s ease;
         }
         .hero-img-container:hover {
@@ -23,12 +23,11 @@
         }
         .hero-img-container img {
             width: 100%;
-            height: 480px; /* Chiều cao cố định lý tưởng cho máy tính */
-            object-fit: cover; /* Giúp ảnh tự cắt cúp, không bao giờ bị méo hình */
+            height: 480px;
+            object-fit: cover;
             object-position: center;
         }
-        
-        /* Cấu trúc lại các thẻ Feature và Process cho đẹp hơn */
+
         .icon-box {
             width: 60px;
             height: 60px;
@@ -38,43 +37,111 @@
             justify-content: center;
             border-radius: 50%;
         }
+
         .avatar {
             width: 45px;
             height: 45px;
             font-weight: bold;
         }
 
-        /* Thêm hiệu ứng hover nhẹ cho các card dự án và doanh nghiệp mới */
-        .project-card, .company-card {
+        .project-card .card-media {
+            height: 190px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .project-card .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.35s ease;
+        }
+
+        .project-card:hover .card-media img {
+            transform: scale(1.04);
+        }
+
+        .company-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            border: 3px solid rgba(13, 110, 253, 0.13);
+            margin: 0 auto 1rem;
+            padding: 10px;
+            object-fit: contain;
+            background: #fff;
+            box-shadow: 0 0.25rem 0.75rem rgba(13, 110, 253, 0.08);
+        }
+
+        .testimonial-avatar {
+            width: 52px;
+            height: 52px;
+            object-fit: cover;
+            border: 3px solid rgba(13, 110, 253, 0.15);
+        }
+
+        .feature-card, .project-card, .company-card, .process-card, .feedback-card, .gallery-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .project-card:hover, .company-card:hover {
+
+        .feature-card:hover, .project-card:hover, .company-card:hover, .process-card:hover, .feedback-card:hover, .gallery-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12) !important;
         }
 
-        /* Thêm style cho icon doanh nghiệp cho đẹp hơn (nếu có logo thật) */
-        .company-logo {
-            max-width: 80px;
-            max-height: 40px;
-            object-fit: contain;
-            margin-bottom: 10px;
+        .gallery-card {
+            overflow: hidden;
+            border-radius: 1.25rem;
         }
 
-        /* Thêm style cho hình ảnh trong Feedback */
-        .feedback-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
             object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.1);
+            object-position: center;
+            transition: transform 0.35s ease;
         }
 
-        /* Responsive cho thiết bị di động */
+        .gallery-card:hover img {
+            transform: scale(1.04);
+        }
+
+        .btn {
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .faq-section .accordion-button {
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .faq-section .accordion-button:not(.collapsed) {
+            color: #0d6efd;
+            background-color: rgba(13, 110, 253, 0.06);
+            box-shadow: none;
+        }
+
+        .cta-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
         @media (max-width: 768px) {
             .hero-img-container img {
-                height: 300px; /* Thu nhỏ chiều cao trên điện thoại */
+                height: 300px;
+            }
+
+            .project-card .card-media {
+                height: 150px;
+            }
+
+            .gallery-card img {
+                height: 180px;
             }
         }
     </style>
@@ -85,7 +152,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="https://via.placeholder.com/150x40.png?text=SkillBridge+Logo" alt="SkillBridge Logo" height="40" class="d-inline-block align-top">
+                <img src="assets/images/logo.png" alt="SkillBridge Logo" height="40" class="d-inline-block align-top">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -141,8 +208,8 @@
                 
                 <div class="col-lg-6">
                     <div class="hero-img-container">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=cover" 
-                             alt="Nhóm sinh viên năng động đang làm việc trên laptop" 
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=cover" 
+                             alt="Sinh viên và doanh nghiệp kết nối tương tác" 
                              loading="lazy">
                     </div>
                 </div>
@@ -254,50 +321,56 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border shadow-sm project-card rounded-4 p-2">
-                        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=600&auto=format&fit=crop" class="card-img-top rounded-3" alt="Thiết kế UI/UX Mobile App" style="height: 180px; object-fit: cover;">
+                    <div class="card h-100 border shadow-sm project-card rounded-4 overflow-hidden">
+                        <div class="card-media mb-0">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=900&auto=format&fit=crop" alt="UI/UX design team" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <span class="badge bg-success bg-opacity-10 text-success mb-3 px-2 py-1">Kinh phí: $500</span>
                             <h5 class="card-title fw-bold mb-2">Thiết kế UI/UX App Mobile</h5>
-                            <p class="text-muted small mb-4">Tìm kiếm nhóm hoặc cá nhân thiết kế lại giao diện hệ thống quản lý ví điện tử.</p>
+                            <p class="text-muted small mb-4">Tìm kiếm nhóm hoặc cá nhân thiết kế lại giao diện hệ thống quản lý ví điện tử, yêu cầu tối ưu UX.</p>
                             <div class="d-flex gap-2 mb-3">
                                 <span class="badge bg-light text-secondary">Figma</span>
                                 <span class="badge bg-light text-secondary">Mobile UI</span>
                             </div>
                             <hr class="text-muted opacity-25">
-                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết</button>
+                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết & Ứng tuyển</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border shadow-sm project-card rounded-4 p-2">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop" class="card-img-top rounded-3" alt="Phát triển Website E-Commerce" style="height: 180px; object-fit: cover;">
+                    <div class="card h-100 border shadow-sm project-card rounded-4 overflow-hidden">
+                        <div class="card-media mb-0">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=900&auto=format&fit=crop" alt="E-commerce product development" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <span class="badge bg-success bg-opacity-10 text-success mb-3 px-2 py-1">Kinh phí: $1,200</span>
                             <h5 class="card-title fw-bold mb-2">Phát triển Website E-Commerce</h5>
-                            <p class="text-muted small mb-4">Xây dựng trang web bán hàng tích hợp thanh toán trực tuyến.</p>
+                            <p class="text-muted small mb-4">Xây dựng trang web bán hàng tích hợp thanh toán trực tuyến. Ưu tiên các bạn có sản phẩm demo sẵn.</p>
                             <div class="d-flex gap-2 mb-3">
                                 <span class="badge bg-light text-secondary">ReactJS</span>
                                 <span class="badge bg-light text-secondary">NodeJS</span>
                             </div>
                             <hr class="text-muted opacity-25">
-                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết</button>
+                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết & Ứng tuyển</button>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border shadow-sm project-card rounded-4 p-2">
-                        <img src="https://images.unsplash.com/photo-1496200186974-4293800e2c20?q=80&w=600&auto=format&fit=crop" class="card-img-top rounded-3" alt="Xây dựng Kế hoạch Marketing số" style="height: 180px; object-fit: cover;">
+                    <div class="card h-100 border shadow-sm project-card rounded-4 overflow-hidden">
+                        <div class="card-media mb-0">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop" alt="Digital marketing strategy session" loading="lazy">
+                        </div>
                         <div class="card-body">
                             <span class="badge bg-success bg-opacity-10 text-success mb-3 px-2 py-1">Kinh phí: $350</span>
-                            <h5 class="card-title fw-bold mb-2">Xây dựng Kế hoạch Marketing</h5>
-                            <p class="text-muted small mb-4">Lên chiến lược truyền thông, sáng tạo nội dung đa nền tảng mạng xã hội.</p>
+                            <h5 class="card-title fw-bold mb-2">Xây dựng Kế hoạch Marketing số</h5>
+                            <p class="text-muted small mb-4">Lên chiến lược truyền thông, sáng tạo nội dung đa nền tảng mạng xã hội thúc đẩy nhận diện thương hiệu mới.</p>
                             <div class="d-flex gap-2 mb-3">
                                 <span class="badge bg-light text-secondary">Content</span>
                                 <span class="badge bg-light text-secondary">SEO</span>
                             </div>
                             <hr class="text-muted opacity-25">
-                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết</button>
+                            <button class="btn btn-primary w-100 rounded-3">Xem chi tiết & Ứng tuyển</button>
                         </div>
                     </div>
                 </div>
@@ -309,34 +382,97 @@
         <div class="container">
             <div class="text-center mb-5">
                 <span class="text-uppercase fw-semibold text-primary small">Mạng lưới đối tác</span>
-                <h2 class="fw-bold mt-2">Doanh nghiệp đồng hành uy tín</h2>
+                <h2 class="fw-bold mt-2">Đồng hành cùng phát triển nhân tài</h2>
+                <p class="text-muted max-width-700 mx-auto mt-2 small">SkillBridge hợp tác với các trường đại học và doanh nghiệp SME nhằm tạo thêm nhiều cơ hội thực hành và dự án thực tế cho sinh viên.</p>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-sm-4 col-lg-2">
-                    <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100 align-items-center justify-content-center">
-                        <img src="https://via.placeholder.com/100x50.png?text=FPT" alt="FPT Software Logo" class="company-logo">
-                        <h6 class="fw-bold mb-1 small">FPT Software</h6>
+
+            <div class="mb-5">
+                <h4 class="fw-bold text-center text-secondary mb-4 fs-5">Đối tác giáo dục</h4>
+                <div class="row row-cols-2 row-cols-sm-3 row-cols-md-6 g-4 align-items-center justify-content-center bg-white p-4 rounded-4 border-0">
+                    <div class="text-center px-3">
+                        <img src="https://navigates.vn/wp-content/uploads/2023/03/adp.jpg" alt="Academy of Policy and Development" class="img-fluid" style="max-height: 55px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                    <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100 align-items-center justify-content-center">
-                        <img src="https://via.placeholder.com/100x50.png?text=VNG" alt="VNG Corporation Logo" class="company-logo">
-                        <h6 class="fw-bold mb-1 small">VNG Corp</h6>
+                    <div class="text-center px-3">
+                        <img src="https://th.bing.com/th/id/OIP.XXcfuLYsowLpCHJuFVVYzQHaK7?w=115&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Hanoi University of Science and Technology" class="img-fluid" style="max-height: 55px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                    <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100 align-items-center justify-content-center">
-                        <img src="https://via.placeholder.com/100x50.png?text=Viettel" alt="Viettel Digital Logo" class="company-logo">
-                        <h6 class="fw-bold mb-1 small">Viettel Digital</h6>
+                    <div class="text-center px-3">
+                        <img src="https://th.bing.com/th/id/OIP.IYn6QLjW0CE6m_gwsZo4NwHaHr?w=167&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="National Economics University" class="img-fluid" style="max-height: 55px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2">
-                    <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100 align-items-center justify-content-center">
-                        <img src="https://via.placeholder.com/100x50.png?text=Sapo" alt="Sapo Technology Logo" class="company-logo">
-                        <h6 class="fw-bold mb-1 small">Sapo Tech</h6>
+                    <div class="text-center px-3">
+                        <img src="https://th.bing.com/th/id/OIP.6f7iKx3DEl7Rvdcp_917FgHaJL?w=138&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Posts and Telecommunications Institute of Technology" class="img-fluid" style="max-height: 55px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div class="text-center px-3">
+                        <img src="https://th.bing.com/th/id/OIP.GryL0cMf2FFDdx2gOsFp8gAAAA?w=100&h=100&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Thuong Mai University" class="img-fluid" style="max-height: 55px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div class="text-center px-3">
+                        <img src="https://th.bing.com/th/id/OIP.i-oKcQVZg5t_kqtwmWqWkQAAAA?w=170&h=118&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="FPT University" class="img-fluid" style="max-height: 50px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
             </div>
+            </div>
+
+            <hr class="my-5 opacity-25 text-muted">
+
+            <div>
+                <h4 class="fw-bold text-center text-secondary mb-4 fs-5">Doanh nghiệp SME tiêu biểu</h4>
+                <div class="row g-4 row-cols-2 row-cols-md-3 row-cols-lg-6">
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary fs-3 fw-bold mb-3 mx-auto">
+                                <i class="bi bi-cpu-fill"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">TechNova</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">Software Dev</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-success bg-opacity-10 text-success fs-3 fw-bold mb-3 mx-auto">
+                                <i class="bi bi-palette-fill"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">Pixel Studio</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">UI/UX Design</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-info bg-opacity-10 text-info fs-3 fw-bold mb-3 mx-auto">
+                                <i class="bi bi-tree-fill"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">GreenSoft</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">E-commerce</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-warning bg-opacity-10 text-warning fs-3 fw-bold mb-3 mx-auto">
+                                <i class="bi bi-journal-code"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">EduNext</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">EduTech</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-danger bg-opacity-10 text-danger fs-3 fw-bold mb-3 mx-auto">
+                                <i class="bi bi-megaphone-fill"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">Nova Digital</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">Digital Marketing</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card text-center p-3 border shadow-sm company-card rounded-4 h-100">
+                            <div class="company-logo d-flex align-items-center justify-content-center bg-purple bg-opacity-10 text-dark fs-3 fw-bold mb-3 mx-auto" style="background-color: rgba(111, 66, 193, 0.1); color: #6f42c1 !important;">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+                            <h6 class="fw-bold mb-1 small text-truncate">Bright Media</h6>
+                            <p class="text-muted small mb-0 px-1" style="font-size: 0.75rem;">Business Consulting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -353,31 +489,85 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-xl-3">
-                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50 text-center">
+                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50">
                         <div class="badge bg-primary mb-3 fs-6 px-3 py-2 rounded-3">01</div>
-                        <h5 class="fw-bold">Đăng ký</h5>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3">
+                            <i class="bi bi-person-plus-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Đăng ký & tạo hồ sơ</h5>
                         <p class="text-muted small mb-0">Tạo profile chuyên nghiệp và hoàn thiện kỹ năng cá nhân.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
-                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50 text-center">
+                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50">
                         <div class="badge bg-primary mb-3 fs-6 px-3 py-2 rounded-3">02</div>
-                        <h5 class="fw-bold">Khám phá</h5>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3">
+                            <i class="bi bi-search-heart-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Khám phá dự án</h5>
                         <p class="text-muted small mb-0">Lọc dự án theo kỹ năng, ngành nghề và mức độ phù hợp.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
-                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50 text-center">
+                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50">
                         <div class="badge bg-primary mb-3 fs-6 px-3 py-2 rounded-3">03</div>
-                        <h5 class="fw-bold">Thực hiện</h5>
-                        <p class="text-muted small mb-0">Giao tiếp, làm việc nhóm và nhận phản hồi từ doanh nghiệp.</p>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3">
+                            <i class="bi bi-people-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Thực hiện & trao đổi</h5>
+                        <p class="text-muted small mb-0">Giao tiếp trực tiếp, làm việc nhóm và nhận phản hồi trực tiếp từ doanh nghiệp.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-xl-3">
-                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50 text-center">
+                    <div class="process-card p-4 rounded-4 h-100 shadow-sm border bg-light bg-opacity-50">
                         <div class="badge bg-primary mb-3 fs-6 px-3 py-2 rounded-3">04</div>
-                        <h5 class="fw-bold">Chứng chỉ</h5>
-                        <p class="text-muted small mb-0">Hoàn thành dự án, tích lũy badge nhằm làm đẹp CV.</p>
+                        <div class="icon-box bg-primary bg-opacity-10 text-primary mb-3">
+                            <i class="bi bi-award-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Nhận chứng chỉ</h5>
+                        <p class="text-muted small mb-0">Hoàn thành dự án xuất sắc, tích lũy badge nhằm làm đẹp CV.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-section py-5 bg-white border-top" id="gallery">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-uppercase fw-semibold text-primary small">Dự án thực tế trên SkillBridge</span>
+                <h2 class="fw-bold mt-2">Những khoảnh khắc hợp tác giữa sinh viên và doanh nghiệp SME qua các dự án ngắn hạn</h2>
+                <p class="text-muted mt-3 mb-0">Hình ảnh minh họa quá trình hợp tác giữa sinh viên và doanh nghiệp SME thông qua các dự án ngắn hạn.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Student working with business mentor" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=800&auto=format&fit=crop" alt="Team discussing client requirements" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=800&auto=format&fit=crop" alt="Website development collaboration" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop" alt="UI/UX design discussion" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800&auto=format&fit=crop" alt="Marketing planning session" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="gallery-card h-100 shadow-sm border">
+                        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop" alt="Startup meeting and presentation" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -393,9 +583,9 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="feedback-card p-4 rounded-4 shadow-sm h-100 bg-white border">
-                        <p class="text-secondary fst-italic">"SkillBridge đã giúp tôi tìm được dự án phù hợp ngay khi mới tốt nghiệp. Portfolio và badge kỹ năng thật sự gây ấn tượng."</p>
+                        <p class="text-secondary fst-italic">"SkillBridge đã giúp tôi tìm được dự án phù hợp ngay khi mới tốt nghiệp. Portfolio và badge kỹ năng thật sự gây ấn tượng với nhà tuyển dụng."</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Nguyễn Hải - Sinh viên CNTT" class="feedback-avatar me-3">
+                            <img class="testimonial-avatar rounded-circle me-3" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Portrait of Nguyễn Hải" loading="lazy">
                             <div>
                                 <h6 class="mb-0 fw-bold">Nguyễn Hải</h6>
                                 <small class="text-muted">Sinh viên CNTT</small>
@@ -405,9 +595,9 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="feedback-card p-4 rounded-4 shadow-sm h-100 bg-white border">
-                        <p class="text-secondary fst-italic">"Nền tảng cho phép doanh nghiệp chọn đúng ứng viên và kiểm soát tiến độ. Chúng tôi tiết kiệm thời gian tuyển dụng."</p>
+                        <p class="text-secondary fst-italic">"Nền tảng cho phép doanh nghiệp chọn đúng ứng viên và kiểm soát tiến độ dự án. Chúng tôi tiết kiệm thời gian tuyển dụng đáng kể."</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Lê Thu - Quản lý tuyển dụng" class="feedback-avatar me-3">
+                            <img class="testimonial-avatar rounded-circle me-3" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop" alt="Portrait of Lê Thu" loading="lazy">
                             <div>
                                 <h6 class="mb-0 fw-bold">Lê Thu</h6>
                                 <small class="text-muted">Quản lý tuyển dụng</small>
@@ -419,7 +609,7 @@
                     <div class="feedback-card p-4 rounded-4 shadow-sm h-100 bg-white border">
                         <p class="text-secondary fst-italic">"Chế độ Escrow Payment khiến tôi yên tâm khi làm việc với các doanh nghiệp. Quy trình minh bạch và an toàn."</p>
                         <div class="d-flex align-items-center mt-4">
-                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Phạm Tú - Chuyên viên dự án" class="feedback-avatar me-3">
+                            <img class="testimonial-avatar rounded-circle me-3" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="Portrait of Phạm Tú" loading="lazy">
                             <div>
                                 <h6 class="mb-0 fw-bold">Phạm Tú</h6>
                                 <small class="text-muted">Chuyên viên dự án</small>
@@ -431,35 +621,97 @@
         </div>
     </section>
 
-    <footer class="footer-section py-5 bg-primary text-white">
+    <section class="faq-section py-5 bg-light border-top">
         <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-4">
-                    <h5 class="fw-bold">SkillBridge</h5>
-                    <p class="text-white-75 small">Kết nối tài năng trẻ với doanh nghiệp thông qua dự án thực tế và kỹ năng số hàng đầu.</p>
-                </div>
-                <div class="col-md-2">
-                    <h6 class="fw-semibold">Liên kết</h6>
-                    <ul class="list-unstyled text-white-75 small">
-                        <li><a href="#home" class="text-white text-decoration-none opacity-75">Trang chủ</a></li>
-                        <li><a href="#projects" class="text-white text-decoration-none opacity-75">Dự án</a></li>
-                        <li><a href="#companies" class="text-white text-decoration-none opacity-75">Doanh nghiệp</a></li>
-                        <li><a href="#about" class="text-white text-decoration-none opacity-75">Về chúng tôi</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h6 class="fw-semibold">Liên hệ</h6>
-                    <p class="text-white-75 mb-1 small"><i class="bi bi-envelope-fill me-2"></i>hello@skillbridge.vn</p>
-                    <p class="text-white-75 mb-0 small"><i class="bi bi-telephone-fill me-2"></i>0123 456 789</p>
-                </div>
-                <div class="col-md-3">
-                    <h6 class="fw-semibold">Đăng ký</h6>
-                    <p class="text-white-75 small">Nhận tin tức dự án mới nhất và ưu đãi tuyển dụng.</p>
-                    <a href="#" class="btn btn-light btn-sm text-primary fw-semibold mt-1">Đăng ký nhận tin</a>
+            <div class="text-center mb-5">
+                <span class="text-uppercase fw-semibold text-primary small">Câu hỏi thường gặp</span>
+                <h2 class="fw-bold mt-2">Giải đáp nhanh về SkillBridge</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion shadow-sm rounded-4 overflow-hidden" id="faqAccordion">
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header" id="faqOneHeading">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                    SkillBridge hoạt động như thế nào?
+                                </button>
+                            </h2>
+                            <div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqOneHeading" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    SkillBridge kết nối sinh viên với doanh nghiệp SME thông qua các dự án ngắn hạn, giúp các bạn xây dựng portfolio và phát triển kỹ năng thực tế.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header" id="faqTwoHeading">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    SME có mất phí khi đăng dự án không?
+                                </button>
+                            </h2>
+                            <div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqTwoHeading" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Doanh nghiệp có thể đăng các dự án tiêu chuẩn hoàn toàn miễn phí. Đối với các nhu cầu đẩy tin nổi bật hoặc sử dụng tính năng Matching AI nâng cao, doanh nghiệp có thể nâng cấp lên các gói Premium.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="pt-4 text-center text-white-50 border-top border-white border-opacity-25 mt-4 small">
-                © 2026 SkillBridge. Bản quyền thuộc về SkillBridge.
+        </div>
+    </section>
+
+    <section class="py-5 bg-primary text-white cta-section text-center position-relative overflow-hidden">
+        <div class="container py-4 position-relative z-1">
+            <h2 class="display-5 fw-bold mb-3">Sẵn sàng bứt phá sự nghiệp ngay hôm nay?</h2>
+            <p class="lead mb-4 opacity-75 max-width-600 mx-auto">Tham gia vào cộng đồng SkillBridge để kết nối với những dự án thực tế và doanh nghiệp uy tín.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="register.html" class="btn btn-light btn-lg px-4 fw-semibold text-primary shadow">Đăng ký Sinh viên</a>
+                <a href="register.html" class="btn btn-outline-light btn-lg px-4">Đối tác Doanh nghiệp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="assets/images/logo-white.png" alt="SkillBridge Logo" height="40" class="mb-3">
+                    <p class="text-white-50 small">Nền tảng công nghệ kết nối sinh viên thực chiến với mạng lưới doanh nghiệp SME, mang lại giá trị thực thông qua từng dự án.</p>
+                    <div class="d-flex gap-3 fs-5 mt-4">
+                        <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="text-white-50"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 offset-lg-2">
+                    <h6 class="fw-bold mb-3 text-uppercase tracking-wider small">Dành cho Sinh viên</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="#projects" class="text-white-50 text-decoration-none">Tìm kiếm dự án</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Tạo Portfolio</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Hệ thống Badge</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 text-uppercase tracking-wider small">Doanh nghiệp</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Đăng tuyển dự án</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Tìm kiếm nhân tài</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Giải pháp Premium</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="fw-bold mb-3 text-uppercase tracking-wider small">Hỗ trợ</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-2">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Điều khoản sử dụng</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Chính sách bảo mật</a></li>
+                        <li><a href="#contact" class="text-white-50 text-decoration-none">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4 opacity-25">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 text-white-50 small">
+                <p class="mb-0">&copy; 2026 SkillBridge. All rights reserved.</p>
+                <p class="mb-0">Phát triển bởi đội ngũ SkillBridge Việt Nam.</p>
             </div>
         </div>
     </footer>
