@@ -42,6 +42,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:16px 2
 .logo-mark{width:32px;height:32px;flex-shrink:0;}
 .logo-blue{color:var(--blue);} .logo-green{color:var(--green);}
 .nav-links{display:flex;gap:28px;font-size:14.5px;font-weight:500;color:var(--gray);}
+.nav-links a{transition:color .2s ease;}
 .nav-links a:hover{color:var(--blue);}
 .nav-actions{display:flex;align-items:center;gap:12px;}
 .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;}
@@ -201,12 +202,12 @@ section{padding:72px 0;}
 .partners-bg img{width:100%;height:100%;object-fit:cover;opacity:0.09;filter:grayscale(1) contrast(1.1);}
 .partners-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.85) 40%, var(--white) 100%);}
 .partners-section .container{position:relative;z-index:1;}
-.partners-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:stretch;}
-.partner-logo{position:relative;display:flex;align-items:center;justify-content:center;height:76px;border:1px solid var(--border);border-radius:var(--r-sm);background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:10px 14px;transition:all .25s ease;overflow:hidden;}
+.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch;}
+.partner-logo{position:relative;display:flex;align-items:center;justify-content:center;height:100px;border:1px solid var(--border);border-radius:var(--r-sm);background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:14px 20px;transition:all .25s ease;overflow:hidden;}
 .partner-logo:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 24px rgba(37,99,235,0.12);background:var(--white);}
-.partner-logo img{max-width:100%;max-height:36px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:all .25s ease;}
+.partner-logo img{max-width:100%;max-height:56px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:all .25s ease;}
 .partner-logo:hover img{filter:grayscale(0);opacity:1;}
-.partner-fallback{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--gray-light);text-align:center;letter-spacing:-0.01em;transition:color .25s ease;}
+.partner-fallback{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--gray-light);text-align:center;letter-spacing:-0.01em;transition:color .25s ease;}
 .partner-logo:hover .partner-fallback{color:var(--blue);}
 
 /* TESTIMONIALS */
@@ -238,152 +239,97 @@ footer{position:relative;border-top:1px solid var(--border);padding:64px 0 28px;
 .footer-bg{position:absolute;inset:0;opacity:.05;z-index:0;}
 .footer-content{position:relative;z-index:1;}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 0.9fr;gap:32px;margin-bottom:40px;}
-.footer-col h4{font-size:14px;margin-bottom:16px;color:var(--ink);}
+.footer-col h4{font-size:14px;margin-bottom:16px;color:var(--ink);text-transform:uppercase;font-weight:700;letter-spacing:0.05em;}
 .footer-col ul li{margin-bottom:10px;}
-.footer-col ul li a{font-size:13.5px;color:var(--gray);transition:color .2s;}
+.footer-col ul li a{font-size:13.5px;color:var(--gray);transition:color .2s ease;}
 .footer-col ul li a:hover{color:var(--blue);}
-.footer-contact{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--gray);margin-bottom:10px;}
-.footer-contact .icon{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--blue);}
-.social-row{display:flex;gap:10px;margin-top:16px;}
-.social-btn{width:34px;height:34px;border-radius:9px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .2s ease;}
-.social-btn:hover{background:var(--blue);border-color:var(--blue);color:var(--white);}
-.social-btn .icon{width:16px;height:16px;}
-.qr-box{width:96px;height:96px;border:1px solid var(--border);border-radius:10px;padding:6px;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);gap:2px;margin-bottom:8px;}
-.qr-box span{background:var(--ink);border-radius:1px;}
-.qr-box span:nth-child(3n){background:transparent;}
-.qr-box span:nth-child(7n){background:transparent;}
-.qr-label{font-size:11px;color:var(--gray);text-align:center;max-width:100px;}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:28px;border-top:1px solid var(--border);font-size:13px;color:var(--gray-light);flex-wrap:wrap;gap:12px;}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .6s ease, transform .6s ease;}
-.reveal-left.visible{opacity:1;transform:translateX(0);}
-.reveal-right{opacity:0;transform:translateX(30px);transition:opacity .6s ease, transform .6s ease;}
-.reveal-right.visible{opacity:1;transform:translateX(0);}
-
-@media(max-width:980px){
-  .hero h1{font-size:34px;}
-  .hero-visual{grid-template-columns:1fr;height:auto;gap:20px;}
-  .side-photo{height:160px;}
-  .center-stage{height:420px;}
-  .laptop-mock{width:280px;}
-  .float-card{font-size:11px;padding:7px 9px;}
-  .fc-3{left:0;} .fc-4{right:0;} .fc-1{left:4px;} .fc-2{right:4px;}
-  .stats-grid{grid-template-columns:repeat(2,1fr);}
-  .values-wrap{grid-template-columns:1fr;}
-  .values-grid{grid-template-columns:repeat(2,1fr);}
-  .steps-panel.active{grid-template-columns:1fr;}
-  .projects-grid{grid-template-columns:1fr;}
-  .partners-grid{grid-template-columns:repeat(3,1fr);}
-  .testi-grid{grid-template-columns:repeat(2,1fr);}
-  .footer-grid{grid-template-columns:1fr 1fr;}
-  .nav-links{display:none;}
-  .menu-toggle{display:block;}
-}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:24px;font-size:13px;color:var(--gray-light);}
 </style>
 </head>
 <body>
 
 <div class="loader" id="loader">
   <div class="loader-ring"></div>
-  <div class="loader-text">SkillBridge</div>
+  <div class="loader-text">Đang tải SkillBridge...</div>
 </div>
-
-<!-- ICON SPRITE -->
-<svg style="display:none">
-  <symbol id="ic-grad" viewBox="0 0 24 24"><path d="M2 8l10-5 10 5-10 5-10-5Z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/><path d="M22 8v6"/></symbol>
-  <symbol id="ic-building" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/><path d="M10 21v-4h4v4"/></symbol>
-  <symbol id="ic-folder" viewBox="0 0 24 24"><path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6Z"/></symbol>
-  <symbol id="ic-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.7-4.9 4.6 1.3 6.5L12 16.8 6.1 20.3l1.3-6.5L2.5 9.2l6.6-.7L12 2.5Z"/></symbol>
-  <symbol id="ic-school" viewBox="0 0 24 24"><path d="M3 10 12 4l9 6-9 6-9-6Z"/><path d="M5 12v6c0 1.1 3.1 2 7 2s7-.9 7-2v-6"/></symbol>
-  <symbol id="ic-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
-  <symbol id="ic-badge" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></symbol>
-  <symbol id="ic-portfolio" viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="8" rx="1"/><rect x="13" y="4" width="8" height="8" rx="1"/><rect x="3" y="14" width="8" height="6" rx="1"/><rect x="13" y="14" width="8" height="6" rx="1"/></symbol>
-  <symbol id="ic-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7V3Z"/><path d="M14 3v4h4"/><path d="M9.5 14 11 15.5 14.5 12"/></symbol>
-  <symbol id="ic-card" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 9.5h19"/><path d="M6 15h4"/></symbol>
-  <symbol id="ic-trophy" viewBox="0 0 24 24"><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M7 5H4a3 3 0 0 0 3 4M17 5h3a3 3 0 0 1-3 4"/><path d="M12 13v3M9 20h6M9.5 20a2.5 2.5 0 0 1 2.5-3 2.5 2.5 0 0 1 2.5 3"/></symbol>
-  <symbol id="ic-briefcase" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></symbol>
-  <symbol id="ic-bell" viewBox="0 0 24 24"><path d="M6 9a6 6 0 0 1 12 0v5l2 3H4l2-3V9Z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
-  <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
-  <symbol id="ic-map" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
-  <symbol id="ic-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></symbol>
-  <symbol id="ic-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 2-2Z"/></symbol>
-  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4V5Z"/></symbol>
-  <symbol id="ic-camera" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M9 7l1.5-2h3L15 7"/></symbol>
-  <symbol id="ic-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5 15.5 12 10 15.5V8.5Z"/></symbol>
-  <symbol id="ic-link" viewBox="0 0 24 24"><path d="M9 15l6-6"/><path d="M11 6l1-1a3.5 3.5 0 0 1 5 5l-1 1M13 18l-1 1a3.5 3.5 0 0 1-5-5l1-1"/></symbol>
-</svg>
 
 <header>
   <nav>
-    <div class="logo">
-      <svg class="logo-mark" viewBox="0 0 100 100" fill="none">
-        <circle cx="40" cy="16" r="10" fill="#2563EB"/>
-        <path d="M20 45c0-14 12-24 26-24 10 0 16 6 16 13 0 9-8 12-16 14-11 2.5-20 6-20 17 0 9 8 15 18 15" stroke="#2563EB" stroke-width="13" stroke-linecap="round" fill="none"/>
-        <path d="M48 62c11-2.5 20-6 20-17 0-9-8-15-18-15" stroke="#22C55E" stroke-width="13" stroke-linecap="round" fill="none"/>
-        <path d="M50 45c0 14-12 24-26 24" stroke="#22C55E" stroke-width="13" stroke-linecap="round" fill="none"/>
-        <circle cx="82" cy="80" r="8" fill="#22C55E"/>
+    <a href="#" class="logo">
+      <svg class="logo-mark" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#2563EB"/>
+        <path d="M9 16L14 21L23 11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       <span><span class="logo-blue">Skill</span><span class="logo-green">Bridge</span></span>
+    </a>
+    
+    <div class="nav-links">
+      <a href="#">Trang chủ</a>
+      <a href="#features">Tính năng</a>
+      <a href="#projects">Dự án</a>
+      <a href="#how-it-works">Cách hoạt động</a>
+      <a href="#companies">Đối tác</a>
     </div>
-    <ul class="nav-links">
-      <li><a href="#values">Giá trị</a></li>
-      <li><a href="#dashboard">Nền tảng</a></li>
-      <li><a href="#how">Quy trình</a></li>
-      <li><a href="#projects">Dự án</a></li>
-      <li><a href="#partners">Đối tác</a></li>
-      <li><a href="#testimonials">Đánh giá</a></li>
-    </ul>
+
     <div class="nav-actions">
-      <a href="#" class="btn btn-outline" style="padding:10px 18px;font-size:14px;">Đăng nhập</a>
-      <a href="#" class="btn btn-primary" style="padding:10px 18px;font-size:14px;">Bắt đầu miễn phí</a>
+      <a href="login.html" class="btn btn-outline" style="padding:10px 20px; font-size:14px;">Đăng nhập</a>
+      <a href="register.html" class="btn btn-primary" style="padding:10px 20px; font-size:14px;">Đăng ký</a>
+      <button class="menu-toggle" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu"><span></span><span></span><span></span></button>
   </nav>
 </header>
 
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="eyebrow"><svg class="icon" style="width:14px;height:14px;"><use href="#ic-sparkle"/></svg> Nền tảng số cho sinh viên &amp; doanh nghiệp SME</div>
-      <h1>Kết nối <span class="accent-blue">kỹ năng</span>, tạo nên <span class="accent-green">cơ hội</span>.</h1>
-      <p>SkillBridge dùng AI để ghép nối sinh viên có năng lực với các dự án ngắn hạn từ doanh nghiệp SME — hợp đồng số, thanh toán an toàn, tất cả trên một nền tảng.</p>
+      <div class="eyebrow">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Nền tảng chứng nhận kỹ năng & kết nối việc làm
+      </div>
+      <h1>Kết nối <span class="accent-blue">Năng lực</span>. <br>Kiến tạo <span class="accent-green">Cơ hội</span>.</h1>
+      <p>Rút ngắn khoảng cách giữa đào tạo và tuyển dụng. Giúp sinh viên chứng minh năng lực thực tế thông qua các thử thách từ doanh nghiệp.</p>
       <div class="hero-actions">
-        <a href="#" class="btn btn-primary">Tôi là sinh viên</a>
-        <a href="#" class="btn btn-outline">Tôi là doanh nghiệp</a>
+        <a href="register.html" class="btn btn-primary">Bắt đầu miễn phí</a>
+        <a href="#projects" class="btn btn-outline">Xem các dự án</a>
       </div>
     </div>
 
-    <div class="hero-visual" id="heroVisual">
-      <div class="side-photo reveal-left">
-        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&q=80&auto=format&fit=crop" alt="Sinh viên sử dụng SkillBridge">
-        <div class="side-tag"><span class="dot" style="background:var(--blue-light);color:var(--blue);"><svg class="icon" style="width:13px;height:13px;"><use href="#ic-grad"/></svg></span>Sinh viên</div>
+    <div class="hero-visual">
+      <div class="side-photo" style="margin-top: 40px;">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=280&q=80" alt="Students collaborating">
+        <div class="side-tag">
+          <div class="dot" style="background:var(--blue-light); color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div>
+          <div>
+            <div style="font-size:11px; color:var(--gray);">Sinh viên mới</div>
+            <div>+1,240 tuần này</div>
+          </div>
+        </div>
       </div>
 
       <div class="center-stage">
-        <svg class="network-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <svg class="network-svg" id="heroNetwork" viewBox="0 0 540 500">
           <defs>
-            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#2563EB"/>
-              <stop offset="100%" stop-color="#22C55E"/>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#22C55E" stop-opacity="0.15"/>
             </linearGradient>
           </defs>
-          <line x1="50" y1="34" x2="8" y2="6"/>
-          <line x1="50" y1="34" x2="92" y2="6"/>
-          <line x1="50" y1="34" x2="2" y2="40"/>
-          <line x1="50" y1="34" x2="98" y2="40"/>
-          <line x1="50" y1="34" x2="50" y2="78"/>
-          <circle class="node-glow" cx="50" cy="34" r="8" fill="#2563EB"/>
-          <circle class="node-dot" cx="50" cy="34" r="3.4" fill="#2563EB"/>
         </svg>
 
         <div class="laptop-mock" id="laptopMock">
           <div class="laptop-screen">
             <div class="laptop-screen-inner">
               <div class="mock-topbar">
-                <div class="mock-topbar-left"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-                <svg class="icon mock-bell"><use href="#ic-bell"/></svg>
+                <div class="mock-topbar-left">
+                  <div class="mock-dot" style="background:#EF4444;"></div>
+                  <div class="mock-dot" style="background:#F59E0B;"></div>
+                  <div class="mock-dot" style="background:#10B981;"></div>
+                </div>
+                <div class="mock-bell">
+                  <svg style="width:100%;height:100%;fill:currentColor;" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                </div>
               </div>
               <div class="mock-body">
                 <div class="mock-side">
@@ -394,540 +340,662 @@ footer{position:relative;border-top:1px solid var(--border);padding:64px 0 28px;
                 </div>
                 <div class="mock-main">
                   <div class="mock-title"></div>
+                  <div class="mock-cards">
+                    <div class="mock-stat">
+                      <div class="n"></div>
+                      <div class="l"></div>
+                    </div>
+                    <div class="mock-stat">
+                      <div class="n g"></div>
+                      <div class="l"></div>
+                    </div>
+                    <div class="mock-stat">
+                      <div class="n o"></div>
+                      <div class="l"></div>
+                    </div>
+                  </div>
                   <div class="mock-profile">
                     <div class="mock-avatar-lg"></div>
                     <div class="mock-profile-text">
                       <div class="mock-profile-name"></div>
                       <div class="mock-progress-track"><div class="mock-progress-fill"></div></div>
                     </div>
-                    <span class="mock-badge-chip">✓ Verified</span>
+                    <div class="mock-badge-chip">Đã chứng nhận</div>
                   </div>
-                  <div class="mock-cards">
-                    <div class="mock-stat"><div class="n"></div><div class="l"></div></div>
-                    <div class="mock-stat"><div class="n g"></div><div class="l"></div></div>
-                    <div class="mock-stat"><div class="n o"></div><div class="l"></div></div>
-                  </div>
-                  <div class="mock-chart">
-                    <div class="mock-bar" style="height:40%;"></div>
-                    <div class="mock-bar" style="height:70%;"></div>
-                    <div class="mock-bar" style="height:55%;"></div>
-                    <div class="mock-bar" style="height:90%;"></div>
-                    <div class="mock-bar" style="height:65%;"></div>
-                    <div class="mock-bar" style="height:80%;"></div>
-                  </div>
-                  <div class="mock-row"><span class="mock-avatar"></span><span class="mock-line"></span></div>
-                  <div class="mock-row"><span class="mock-avatar"></span><span class="mock-line" style="width:60%;"></span></div>
+                  <div class="mock-chart" id="mockChart"></div>
+                  <div class="mock-row"><div class="mock-avatar"></div><div class="mock-line"></div></div>
+                  <div class="mock-row"><div class="mock-avatar" style="background:var(--blue-light)"></div><div class="mock-line"></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="float-card fc-1"><span class="fc-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-sparkle"/></svg></span>AI Matching</div>
-        <div class="float-card fc-2"><span class="fc-icon" style="background:var(--green-light);color:var(--green-dark);"><svg class="icon"><use href="#ic-badge"/></svg></span>Skill Badge</div>
-        <div class="float-card fc-3"><span class="fc-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-portfolio"/></svg></span>Portfolio Builder</div>
-        <div class="float-card fc-4"><span class="fc-icon" style="background:var(--orange-light);color:var(--orange-dark);"><svg class="icon"><use href="#ic-doc"/></svg></span>Digital Contract</div>
-        <div class="float-card fc-5"><span class="fc-icon" style="background:var(--ink);color:var(--white);"><svg class="icon"><use href="#ic-card"/></svg></span>Escrow Payment</div>
+        <div class="float-card fc-1">
+          <div class="fc-icon" style="background:var(--blue-light); color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div>Python Core Verified</div>
+        </div>
+        <div class="float-card fc-2">
+          <div class="fc-icon" style="background:var(--green-light); color:var(--green);"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div>FPT Software Hired</div>
+        </div>
+        <div class="float-card fc-3">
+          <div class="fc-icon" style="background:var(--orange-light); color:var(--orange);"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div>Match Đạt 95%</div>
+        </div>
+        <div class="float-card fc-4">
+          <div class="fc-icon" style="background:var(--blue-light); color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l-7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+          <div>Thưởng 15M Đang Chờ</div>
+        </div>
+        <div class="float-card fc-5">
+          <span style="color:var(--green);">●</span> 142 Doanh nghiệp đang online tuyển dụng
+        </div>
       </div>
 
-      <div class="side-photo reveal-right">
-        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=80&auto=format&fit=crop" alt="Đại diện doanh nghiệp sử dụng SkillBridge">
-        <div class="side-tag"><span class="dot" style="background:var(--green-light);color:var(--green-dark);"><svg class="icon" style="width:13px;height:13px;"><use href="#ic-building"/></svg></span>Doanh nghiệp</div>
+      <div class="side-photo" style="margin-top: -20px;">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=280&q=80" alt="Recruiter reviewing profile">
+        <div class="side-tag">
+          <div class="dot" style="background:var(--green-light); color:var(--green);"><svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <div style="font-size:11px; color:var(--gray);">Dự án mới đăng</div>
+            <div>42 Thử thách Dev / Design</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="stats-strip">
+<div class="stats-strip">
   <div class="container">
     <div class="stats-grid">
-      <div class="stat-card reveal"><div class="stat-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-grad"/></svg></div><b>1,200+</b><span>Sinh viên</span></div>
-      <div class="stat-card reveal"><div class="stat-icon" style="background:var(--green-light);color:var(--green-dark);"><svg class="icon"><use href="#ic-building"/></svg></div><b>350+</b><span>Doanh nghiệp SME</span></div>
-      <div class="stat-card reveal"><div class="stat-icon" style="background:var(--orange-light);color:var(--orange-dark);"><svg class="icon"><use href="#ic-folder"/></svg></div><b>800+</b><span>Dự án hoàn thành</span></div>
-      <div class="stat-card reveal"><div class="stat-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-star"/></svg></div><b>4.9/5</b><span>Đánh giá trung bình</span></div>
-      <div class="stat-card reveal"><div class="stat-icon" style="background:var(--green-light);color:var(--green-dark);"><svg class="icon"><use href="#ic-school"/></svg></div><b>15+</b><span>Trường đại học</span></div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:var(--blue-light); color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <b>18,450+</b>
+        <span>Sinh viên đăng ký</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:var(--green-light); color:var(--green);"><svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <b>420+</b>
+        <span>Doanh nghiệp đối tác</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:var(--orange-light); color:var(--orange);"><svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <b>3,120+</b>
+        <span>Dự án hoàn thành</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:var(--blue-light); color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <b>94.6%</b>
+        <span>Tỷ lệ có việc sau dự án</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background:var(--green-light); color:var(--green);"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div>
+        <b>520M+</b>
+        <span>Quỹ thưởng & học bổng</span>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<section id="values" class="values-section">
+<section id="features" class="values-section">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Giá trị cốt lõi</div>
-      <h2>Một hệ sinh thái tuyển dụng linh hoạt</h2>
-      <p>Nơi kỹ năng sinh viên gặp đúng cơ hội từ doanh nghiệp SME.</p>
+    <div class="section-head">
+      <div class="eyebrow">Tính năng cốt lõi</div>
+      <h2>Tại sao chọn SkillBridge?</h2>
+      <p>Giải pháp toàn diện giải quyết bài toán khủng hoảng kinh nghiệm của sinh viên và lọc hồ sơ ảo cho doanh nghiệp.</p>
     </div>
+    
     <div class="values-wrap">
-      <div class="values-photo reveal">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80&auto=format&fit=crop" alt="Sinh viên và doanh nghiệp hợp tác">
+      <div class="values-photo">
+        <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=600&q=80" alt="Dashboard interaction">
       </div>
       <div class="values-grid">
-        <div class="value-card reveal">
-          <div class="value-icon" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));"><svg class="icon"><use href="#ic-link"/></svg></div>
-          <h3>Kết nối kỹ năng</h3>
-          <p>Ghép nối chính xác giữa năng lực sinh viên và nhu cầu thực tế của doanh nghiệp.</p>
+        <div class="value-card">
+          <div class="value-icon" style="background:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <h3>Thử thách thực chiến</h3>
+          <p>Làm việc trực tiếp trên các bài toán thực tế do các tập đoàn công nghệ hàng đầu đặt hàng xây dựng.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon" style="background:linear-gradient(135deg,var(--green),var(--green-dark));"><svg class="icon"><use href="#ic-sparkle"/></svg></div>
-          <h3>Tạo cơ hội</h3>
-          <p>Mở ra các dự án ngắn hạn giúp sinh viên có thu nhập và kinh nghiệm thực chiến.</p>
+        <div class="value-card">
+          <div class="value-icon" style="background:var(--green);"><svg class="icon" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l-7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+          <h3>AI Automated Review</h3>
+          <p>Hệ thống tự động chấm điểm mã nguồn, kiểm tra chuẩn tối ưu hóa cấu trúc dữ liệu và logic tự động 24/7.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon" style="background:linear-gradient(135deg,var(--orange),var(--orange-dark));"><svg class="icon"><use href="#ic-trophy"/></svg></div>
-          <h3>Phát triển nghề nghiệp</h3>
-          <p>Xây dựng portfolio, nhận đánh giá và mở rộng mạng lưới chuyên môn.</p>
+        <div class="value-card">
+          <div class="value-icon" style="background:var(--orange);"><svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <h3>Hồ sơ năng lực số</h3>
+          <p>Thay thế CV truyền thống bằng bảng điểm kỹ năng thực tế được chứng thực minh bạch qua Blockchain.</p>
         </div>
-        <div class="value-card reveal">
-          <div class="value-icon" style="background:linear-gradient(135deg,var(--blue),var(--green));"><svg class="icon"><use href="#ic-badge"/></svg></div>
-          <h3>Hệ sinh thái linh hoạt</h3>
-          <p>Mô hình tuyển dụng ngắn hạn, linh động, phù hợp với cả hai phía.</p>
+        <div class="value-card">
+          <div class="value-icon" style="background:var(--blue-dark);"><svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/><polyline points="16 11 18 13 22 9"/></svg></div>
+          <h3>Tuyển dụng trực tiếp</h3>
+          <p>Doanh nghiệp chủ động liên hệ phỏng vấn khi điểm số thử thách của bạn lọt vào top 10% hệ thống.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="dashboard" class="bg-surface">
+<section class="bg-surface" style="padding: 40px 0;">
   <div class="container">
-    <div class="dash-preview reveal">
-      <h2>Trải nghiệm nền tảng SkillBridge</h2>
-      <p>Quản lý hồ sơ, dự án, hợp đồng và thanh toán trên cùng một nền tảng.</p>
-      <div class="center-stage">
-        <div class="laptop-mock">
-          <div class="laptop-screen">
-            <div class="laptop-screen-inner">
-              <div class="mock-topbar">
-                <div class="mock-topbar-left"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
-                <svg class="icon mock-bell"><use href="#ic-bell"/></svg>
+    <div class="dash-preview">
+      <h2>Giao diện Không gian làm việc Thông minh</h2>
+      <p>Theo dõi tiến trình thử thách, nhận nhận xét chi tiết từ AI và kết nối trực tiếp Mentor quản lý dự án của bạn.</p>
+      <div class="center-stage" style="height: 340px;">
+        <div class="laptop-mock" style="position:relative; top:0; max-width: 680px;">
+          <div class="laptop-screen" style="padding: 6px; border-radius: 12px;">
+            <div class="laptop-screen-inner" style="aspect-ratio: 16/10;">
+              <div class="mock-topbar" style="padding: 6px 12px;">
+                <div class="mock-topbar-left"><div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div></div>
+                <div style="font-size: 9px; color: var(--gray-light);">sandbox-env-v3.skillbridge.vn</div>
+                <div class="mock-bell"></div>
               </div>
               <div class="mock-body">
-                <div class="mock-side">
-                  <div class="mock-side-item active"></div>
-                  <div class="mock-side-item"></div>
-                  <div class="mock-side-item"></div>
-                  <div class="mock-side-item"></div>
-                  <div class="mock-side-item"></div>
+                <div class="mock-side" style="width: 15%;">
+                  <div class="mock-side-item active" style="width: 100%;"></div>
+                  <div class="mock-side-item" style="width: 80%;"></div>
+                  <div class="mock-side-item" style="width: 85%;"></div>
                 </div>
-                <div class="mock-main">
-                  <div class="mock-title"></div>
-                  <div class="mock-profile">
-                    <div class="mock-avatar-lg"></div>
-                    <div class="mock-profile-text">
-                      <div class="mock-profile-name"></div>
-                      <div class="mock-progress-track"><div class="mock-progress-fill"></div></div>
-                    </div>
-                    <span class="mock-badge-chip">✓ Verified</span>
+                <div class="mock-main" style="padding: 16px; text-align: left;">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                    <div class="mock-title" style="width: 50%; height:12px;"></div>
+                    <div style="width: 60px; height: 14px; background: var(--blue-light); border-radius:4px;"></div>
                   </div>
-                  <div class="mock-cards">
-                    <div class="mock-stat"><div class="n"></div><div class="l"></div></div>
-                    <div class="mock-stat"><div class="n g"></div><div class="l"></div></div>
-                    <div class="mock-stat"><div class="n o"></div><div class="l"></div></div>
-                    <div class="mock-stat"><div class="n g"></div><div class="l"></div></div>
+                  <div style="background:var(--surface); height: 120px; border-radius: 8px; padding:12px; margin-bottom:12px; font-family: monospace; font-size:9px; color:var(--gray);">
+                    <span style="color:var(--blue);">def</span> <span style="color:var(--orange-dark);">calculate_rsi_wilder</span>(data, window=14):<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;delta = data[<span style="color:var(--green-dark);">'close'</span>].diff()<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;gain = (delta.where(delta > <span style="color:var(--blue);">0</span>, <span style="color:var(--blue);">0</span>))<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--gray-light);"># AI Review: Code cấu trúc tối ưu. Đạt chuẩn.</span>
                   </div>
-                  <div class="mock-chart">
-                    <div class="mock-bar" style="height:35%;"></div>
-                    <div class="mock-bar" style="height:60%;"></div>
-                    <div class="mock-bar" style="height:45%;"></div>
-                    <div class="mock-bar" style="height:85%;"></div>
-                    <div class="mock-bar" style="height:70%;"></div>
-                    <div class="mock-bar" style="height:95%;"></div>
-                    <div class="mock-bar" style="height:55%;"></div>
-                  </div>
-                  <div class="mock-row"><span class="mock-avatar"></span><span class="mock-line"></span></div>
-                  <div class="mock-row"><span class="mock-avatar"></span><span class="mock-line" style="width:60%;"></span></div>
-                  <div class="mock-row"><span class="mock-avatar"></span><span class="mock-line" style="width:75%;"></span></div>
+                  <div class="mock-progress-track" style="height: 8px;"><div class="mock-progress-fill" style="width: 88%;"></div></div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="float-card fc-1"><span class="fc-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-sparkle"/></svg></span>AI Matching</div>
-        <div class="float-card fc-2"><span class="fc-icon" style="background:var(--green-light);color:var(--green-dark);"><svg class="icon"><use href="#ic-badge"/></svg></span>Skill Badge</div>
-        <div class="float-card fc-3"><span class="fc-icon" style="background:var(--blue-light);color:var(--blue);"><svg class="icon"><use href="#ic-portfolio"/></svg></span>Portfolio Builder</div>
-        <div class="float-card fc-4"><span class="fc-icon" style="background:var(--orange-light);color:var(--orange-dark);"><svg class="icon"><use href="#ic-doc"/></svg></span>Digital Contract</div>
-        <div class="float-card fc-5"><span class="fc-icon" style="background:var(--ink);color:var(--white);"><svg class="icon"><use href="#ic-card"/></svg></span>Escrow Payment</div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="how">
+<section id="how-it-works">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Quy trình hoạt động</div>
-      <h2>Từ hồ sơ đến dự án hoàn thành</h2>
-      <p>SkillBridge tự động hóa toàn bộ hành trình, từ ghép nối AI đến thanh toán an toàn.</p>
-    </div>
-    <div class="timeline">
-      <div class="tl-item reveal">
-        <div class="tl-node" style="color:var(--blue);"><svg class="icon"><use href="#ic-doc"/></svg></div>
-        <div class="tl-content"><h4>Tạo hồ sơ kỹ năng</h4><p>Giới thiệu năng lực, portfolio và lĩnh vực quan tâm của bạn.</p></div>
-      </div>
-      <div class="tl-item ai reveal">
-        <div class="tl-node"><svg class="icon"><use href="#ic-sparkle"/></svg></div>
-        <div class="tl-content"><h4>AI Matching</h4><p>Hệ thống AI đề xuất dự án phù hợp nhất với hồ sơ của bạn.</p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-node" style="color:var(--green-dark);"><svg class="icon"><use href="#ic-briefcase"/></svg></div>
-        <div class="tl-content"><h4>Ứng tuyển</h4><p>Gửi đề xuất và trao đổi trực tiếp với doanh nghiệp.</p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-node" style="color:var(--orange-dark);"><svg class="icon"><use href="#ic-doc"/></svg></div>
-        <div class="tl-content"><h4>Ký hợp đồng điện tử</h4><p>Hợp đồng số minh bạch, rõ ràng về phạm vi và thời hạn.</p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-node" style="color:var(--blue);"><svg class="icon"><use href="#ic-card"/></svg></div>
-        <div class="tl-content"><h4>Escrow Payment</h4><p>Thanh toán được giữ an toàn cho đến khi công việc hoàn tất.</p></div>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-node" style="color:var(--green-dark);"><svg class="icon"><use href="#ic-trophy"/></svg></div>
-        <div class="tl-content"><h4>Hoàn thành dự án</h4><p>Nhận đánh giá, xây dựng uy tín và mở khóa dự án lớn hơn.</p></div>
-      </div>
+    <div class="section-head">
+      <div class="eyebrow">Quy trình tham gia</div>
+      <h2>Hành trình từ Thử thách đến Bàn làm việc</h2>
+      <p>4 bước tinh gọn giúp bạn nâng cấp hồ sơ kỹ năng số và giành lấy cơ hội việc làm mơ ước.</p>
     </div>
 
-    <div class="tabs">
-      <button class="tab-btn active" data-tab="student">Dành cho sinh viên</button>
-      <button class="tab-btn" data-tab="sme">Dành cho doanh nghiệp</button>
-    </div>
-    <div class="steps-panel active" id="panel-student">
-      <div class="step-card"><div class="step-num" style="background:var(--blue-light);color:var(--blue);">01</div><h4>Tạo hồ sơ kỹ năng</h4><p>Giới thiệu năng lực, portfolio và lĩnh vực quan tâm của bạn.</p></div>
-      <div class="step-card"><div class="step-num" style="background:var(--blue-light);color:var(--blue);">02</div><h4>Khám phá dự án</h4><p>AI đề xuất các dự án ngắn hạn phù hợp nhất với bạn.</p></div>
-      <div class="step-card"><div class="step-num" style="background:var(--blue-light);color:var(--blue);">03</div><h4>Ứng tuyển &amp; thực hiện</h4><p>Nhận dự án, hoàn thành và tích lũy đánh giá uy tín.</p></div>
-    </div>
-    <div class="steps-panel" id="panel-sme">
-      <div class="step-card"><div class="step-num" style="background:var(--green-light);color:var(--green-dark);">01</div><h4>Đăng dự án</h4><p>Mô tả nhu cầu, ngân sách và kỹ năng cần tìm.</p></div>
-      <div class="step-card"><div class="step-num" style="background:var(--green-light);color:var(--green-dark);">02</div><h4>Nhận đề xuất từ AI</h4><p>So sánh hồ sơ được AI xếp hạng và chọn ứng viên phù hợp.</p></div>
-      <div class="step-card"><div class="step-num" style="background:var(--green-light);color:var(--green-dark);">03</div><h4>Hợp tác &amp; đánh giá</h4><p>Quản lý tiến độ, thanh toán và đánh giá kết quả trên nền tảng.</p></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-node" style="color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg></div>
+        <div class="tl-content">
+          <h4>1. Tạo tài khoản khoản hồ sơ kỹ năng</h4>
+          <p>Đăng ký tài khoản, kết nối kho lưu trữ mã nguồn GitHub/Behance để đồng bộ dữ liệu nền tảng ban đầu của bạn.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node" style="color:var(--orange);"><svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="tl-content">
+          <h4>2. Lựa chọn dự án & Thử thách doanh nghiệp</h4>
+          <p>Tìm kiếm các dự án phù hợp với lộ trình nghề nghiệp thuộc các lĩnh vực AI, Data, Web Dev, Marketing hay UI/UX Design.</p>
+        </div>
+      </div>
+      <div class="tl-item ai">
+        <div class="tl-node" style="color:var(--green);"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/></svg></div>
+        <div class="tl-content">
+          <h4>3. Chấm điểm & Đánh giá tự động bằng AI</h4>
+          <p>Nộp giải pháp của bạn, hệ thống AI tự động phân tích độ tối ưu hóa, tính bảo mật bảo mật và xếp hạng trực tiếp trên Bảng vàng Toàn quốc.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node" style="color:var(--blue);"><svg class="icon" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+        <div class="tl-content">
+          <h4>4. Nhận thưởng & Phỏng vấn trực tiếp</h4>
+          <p>Các dự án có giải thưởng tiền mặt sẽ được giải ngân trực tiếp. Đồng thời hồ sơ xuất sắc sẽ được đẩy thẳng đến Giám đốc Tuyển dụng của doanh nghiệp đối tác.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="projects" class="bg-surface">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Dự án nổi bật</div>
-      <h2>Cơ hội đang chờ bạn</h2>
-      <p>Một vài ví dụ dự án đang tìm kiếm sinh viên phù hợp.</p>
+    <div class="section-head">
+      <div class="eyebrow">Thử thách đang mở</div>
+      <h2>Dự án Thực tế từ Doanh nghiệp</h2>
+      <p>Giải quyết bài toán thực tế của doanh nghiệp. Nhận thưởng tiền mặt và tấm vé tuyển dụng thẳng.</p>
     </div>
-    <div class="projects-grid">
-      <div class="project-card reveal">
+
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(event, 'tech')">Công nghệ / Dev</button>
+      <button class="tab-btn" onclick="switchTab(event, 'business')">Kinh tế / Phân tích</button>
+      <button class="tab-btn" onclick="switchTab(event, 'design')">Thiết kế / UIUX</button>
+    </div>
+
+    <div class="steps-panel active" id="tech">
+      <div class="project-card">
         <div class="project-thumb-wrap">
-          <img class="project-thumb" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80&auto=format&fit=crop" alt="Thiết kế bộ nhận diện thương hiệu">
-          <div class="project-company" style="color:var(--blue);">BF</div>
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=380&q=80" alt="Crypto Bot">
+          <div class="project-company">B</div>
         </div>
         <div class="project-body">
-          <div class="tag-row"><span class="tag tag-blue">Thiết kế</span><span class="tag tag-green">Remote</span></div>
-          <h4>Thiết kế bộ nhận diện thương hiệu</h4>
-          <div class="project-salary">3-5 triệu VND</div>
+          <div class="tag-row"><span class="tag tag-blue">Python</span><span class="tag tag-green">Fintech</span></div>
+          <h4>Xây dựng Robo-Advisor & Trading Bot tự động dựa trên chỉ báo RSI Wilder</h4>
+          <p class="project-salary">Thưởng quỹ: 15,000,000 đ</p>
           <div class="project-meta-row">
-            <span class="meta-item"><svg class="icon"><use href="#ic-clock"/></svg>3 tuần</span>
-            <span class="tag tag-orange">Figma</span>
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 12 ngày</div>
+            <div class="meta-item">420 Đã nộp</div>
           </div>
         </div>
       </div>
-      <div class="project-card reveal">
+
+      <div class="project-card">
         <div class="project-thumb-wrap">
-          <img class="project-thumb" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80&auto=format&fit=crop" alt="Chạy chiến dịch marketing">
-          <div class="project-company" style="color:var(--green-dark);">TC</div>
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=380&q=80" alt="Web app">
+          <div class="project-company">V</div>
         </div>
         <div class="project-body">
-          <div class="tag-row"><span class="tag tag-blue">Marketing</span><span class="tag tag-orange">Hybrid</span></div>
-          <h4>Chạy chiến dịch social media</h4>
-          <div class="project-salary">2-4 triệu VND</div>
+          <div class="tag-row"><span class="tag tag-blue">ReactJS</span><span class="tag tag-orange">Web3</span></div>
+          <h4>Thiết kế Module quản lý Ví phi tập trung tích hợp API ví Web3</h4>
+          <p class="project-salary">Thưởng quỹ: 22,000,000 đ</p>
           <div class="project-meta-row">
-            <span class="meta-item"><svg class="icon"><use href="#ic-clock"/></svg>4 tuần</span>
-            <span class="tag tag-green">Content</span>
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 5 ngày</div>
+            <div class="meta-item">185 Đã nộp</div>
           </div>
         </div>
       </div>
-      <div class="project-card reveal">
+
+      <div class="project-card">
         <div class="project-thumb-wrap">
-          <img class="project-thumb" src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&q=80&auto=format&fit=crop" alt="Lập trình landing page">
-          <div class="project-company" style="color:var(--orange-dark);">RT</div>
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=380&q=80" alt="Cybersecurity">
+          <div class="project-company">F</div>
         </div>
         <div class="project-body">
-          <div class="tag-row"><span class="tag tag-blue">Lập trình</span><span class="tag tag-green">Remote</span></div>
-          <h4>Xây dựng landing page</h4>
-          <div class="project-salary">4-6 triệu VND</div>
+          <div class="tag-row"><span class="tag tag-blue">Golang</span><span class="tag tag-orange">Security</span></div>
+          <h4>Xây dựng công cụ kiểm tra lỗ hổng SQL Injection tự động cho Web TMĐT</h4>
+          <p class="project-salary">Thưởng quỹ: 18,000,000 đ</p>
           <div class="project-meta-row">
-            <span class="meta-item"><svg class="icon"><use href="#ic-clock"/></svg>2 tuần</span>
-            <span class="tag tag-blue">React</span>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <div class="project-thumb-wrap">
-          <img class="project-thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format&fit=crop" alt="Phân tích dữ liệu">
-          <div class="project-company" style="color:var(--blue);">DL</div>
-        </div>
-        <div class="project-body">
-          <div class="tag-row"><span class="tag tag-blue">Data</span><span class="tag tag-green">Remote</span></div>
-          <h4>Phân tích dữ liệu bán hàng</h4>
-          <div class="project-salary">3-5 triệu VND</div>
-          <div class="project-meta-row">
-            <span class="meta-item"><svg class="icon"><use href="#ic-clock"/></svg>3 tuần</span>
-            <span class="tag tag-orange">Excel</span>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal">
-        <div class="project-thumb-wrap">
-          <img class="project-thumb" src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80&auto=format&fit=crop" alt="Tư vấn kế hoạch kinh doanh">
-          <div class="project-company" style="color:var(--green-dark);">BZ</div>
-        </div>
-        <div class="project-body">
-          <div class="tag-row"><span class="tag tag-blue">Business</span><span class="tag tag-orange">Hybrid</span></div>
-          <h4>Lập kế hoạch kinh doanh</h4>
-          <div class="project-salary">4-7 triệu VND</div>
-          <div class="project-meta-row">
-            <span class="meta-item"><svg class="icon"><use href="#ic-clock"/></svg>3 tuần</span>
-            <span class="tag tag-green">Strategy</span>
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 20 ngày</div>
+            <div class="meta-item">92 Đã nộp</div>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="steps-panel" id="business">
+      <div class="project-card">
+        <div class="project-thumb-wrap">
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=380&q=80" alt="E-com research">
+          <div class="project-company">S</div>
+        </div>
+        <div class="project-body">
+          <div class="tag-row"><span class="tag tag-orange">Data Governance</span><span class="tag tag-blue">Sapo CRM</span></div>
+          <h4>Xây dựng bộ quy tắc làm sạch và chuẩn hóa dữ liệu khách hàng hệ thống CRM</h4>
+          <p class="project-salary">Thưởng quỹ: 12,000,000 đ</p>
+          <div class="project-meta-row">
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 8 ngày</div>
+            <div class="meta-item">310 Đã nộp</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-thumb-wrap">
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=380&q=80" alt="Livestream analytics">
+          <div class="project-company">T</div>
+        </div>
+        <div class="project-body">
+          <div class="tag-row"><span class="tag tag-green">Marketing</span><span class="tag tag-orange">E-Commerce</span></div>
+          <h4>Phân tích ảnh hưởng của Livestream TMĐT đến hành vi mua sắm ngẫu hứng của sinh viên</h4>
+          <p class="project-salary">Thưởng quỹ: 10,000,000 đ</p>
+          <div class="project-meta-row">
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 15 ngày</div>
+            <div class="meta-item">520 Đã nộp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps-panel" id="design">
+      <div class="project-card">
+        <div class="project-thumb-wrap">
+          <img class="project-thumb" src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=380&q=80" alt="UIUX design">
+          <div class="project-company">M</div>
+        </div>
+        <div class="project-body">
+          <div class="tag-row"><span class="tag tag-orange">Figma</span><span class="tag tag-blue">UI/UX</span></div>
+          <h4>Thiết kế luồng trải nghiệm (User Flow) hệ thống Đặt Tour Du lịch trực tuyến</h4>
+          <p class="project-salary">Thưởng quỹ: 14,000,000 đ</p>
+          <div class="project-meta-row">
+            <div class="meta-item"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Còn 4 ngày</div>
+            <div class="meta-item">240 Đã nộp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section id="partners" class="partners-section">
+<section id="companies" class="partners-section">
   <div class="partners-bg">
-    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&q=80&auto=format&fit=crop" alt="">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" alt="Corporate buildings background">
   </div>
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Đối tác</div>
-      <h2>Được tin tưởng bởi các trường đại học và doanh nghiệp</h2>
-      <p>
-        SkillBridge hợp tác cùng các trường đại học và doanh nghiệp nhằm mang đến
-        nhiều cơ hội việc làm, thực tập và dự án thực tế cho sinh viên.
-      </p>
+    <div class="section-head">
+      <div class="eyebrow">Mạng lưới liên kết</div>
+      <h2>Được tin tưởng bởi các doanh nghiệp hàng đầu</h2>
+      <p>Cơ hội ứng tuyển trực tiếp vào các tập đoàn công nghệ lớn và các startup kỳ lân năng động.</p>
     </div>
-
-    <div class="partners-grid reveal">
-
-      <div class="partner-logo">
-        <img src="images/apd.png" alt="APD"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">APD</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="https://upload.wikimedia.org/wikipedia/vi/8/8e/FTU_logo_2020.png" alt="Foreign Trade University"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">FTU</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/neu.png" alt="National Economics University"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">NEU</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/hust.png" alt="HUST"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">HUST</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="https://static.wikia.nocookie.net/logos/images/1/10/FPT_Software.png/revision/latest?cb=20211102105650&path-prefix=vi" alt="FPT Software"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">FPT Software</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="https://blog.topcv.vn/wp-content/uploads/2014/10/TopCVlogo.png" alt="TopCV"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">TopCV</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/viettel.png" alt="Viettel Solutions"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">Viettel Solutions</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/cmc.png" alt="CMC Global"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">CMC Global</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/topdev.png" alt="TopDev"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">TopDev</span>
-      </div>
-
-      <div class="partner-logo">
-        <img src="images/itviec.png" alt="ITviec"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <span class="partner-fallback" style="display:none;">ITviec</span>
-      </div>
-
+    <div class="partners-grid">
+      <div class="partner-logo"><span class="partner-fallback">FPT Software</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Sapo Technology</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Viettel Group</span></div>
+      <div class="partner-logo"><span class="partner-fallback">VNG Corporation</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Techcombank</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Vinamilk</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Momo Wallet</span></div>
+      <div class="partner-logo"><span class="partner-fallback">Shopee VN</span></div>
     </div>
   </div>
 </section>
 
-<section id="testimonials" class="bg-surface">
+<section class="bg-surface">
   <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">Sinh viên thành công</div>
-      <h2>Câu chuyện từ cộng đồng SkillBridge</h2>
+    <div class="section-head">
+      <div class="eyebrow">Câu chuyện thành công</div>
+      <h2>Sinh viên nói gì về SkillBridge?</h2>
     </div>
     <div class="testi-grid">
-      <div class="testi-card reveal">
+      <div class="testi-card">
         <div class="testi-head">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=100&q=80&auto=format&fit=crop" alt="Minh Anh">
-          <div><div class="testi-name">Minh Anh</div><div class="testi-role">Thiết kế đồ họa</div></div>
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt="Avatar">
+          <div>
+            <div class="testi-name">Nguyễn Linh Chi</div>
+            <div class="testi-role">Hiện tại là FE Dev tại VNG</div>
+          </div>
         </div>
-        <div class="testi-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
-        <p>"Mình có dự án đầu tiên chỉ sau 2 tuần đăng ký trải nghiệm rất chuyên nghiệp."</p>
+        <div class="testi-stars">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Nhờ tham gia thử thách thiết kế hệ thống đặt tour của tập đoàn du lịch trên SkillBridge, mình đã học được cách xây dựng User Flow thực tế và lọt vào tầm ngắm của HR."</p>
       </div>
-      <div class="testi-card reveal">
+
+      <div class="testi-card">
         <div class="testi-head">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&q=80&auto=format&fit=crop" alt="Đức Huy">
-          <div><div class="testi-name">Đức Huy</div><div class="testi-role">Lập trình web</div></div>
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=80&q=80" alt="Avatar">
+          <div>
+            <div class="testi-name">Bùi Đức Nam</div>
+            <div class="testi-role">Data Analyst tại Sapo</div>
+          </div>
         </div>
-        <div class="testi-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
-        <p>"AI Matching giúp mình tìm đúng dự án phù hợp với kỹ năng React của mình."</p>
+        <div class="testi-stars">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Dự án làm sạch dữ liệu CRM trên này cực kỳ thực tế. Hệ thống chấm điểm tự động chỉ ra chính xác những lỗi logic cấu trúc dữ liệu mà mình mắc phải."</p>
       </div>
-      <div class="testi-card reveal">
+
+      <div class="testi-card">
         <div class="testi-head">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&auto=format&fit=crop" alt="Thuỳ Linh">
-          <div><div class="testi-name">Thuỳ Linh</div><div class="testi-role">Marketing</div></div>
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt="Avatar">
+          <div>
+            <div class="testi-name">Lê Hoàng Nam</div>
+            <div class="testi-role">Blockchain Dev tại Bitget</div>
+          </div>
         </div>
-        <div class="testi-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
-        <p>"Thanh toán escrow khiến mình yên tâm khi làm việc với doanh nghiệp mới."</p>
+        <div class="testi-stars">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Thuật toán Bot Trading của mình đạt top 2 thử thách tháng trước, nhận ngay tiền thưởng 15 triệu và được tuyển thẳng làm CTV phát triển hệ thống."</p>
       </div>
-      <div class="testi-card reveal">
+
+      <div class="testi-card">
         <div class="testi-head">
-          <img class="testi-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=100&q=80&auto=format&fit=crop" alt="Quang Vinh">
-          <div><div class="testi-name">Quang Vinh</div><div class="testi-role">Phân tích dữ liệu</div></div>
+          <img class="testi-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" alt="Avatar">
+          <div>
+            <div class="testi-name">Bùi Thu Huyền</div>
+            <div class="testi-role">Digital Marketer tại Shopee</div>
+          </div>
         </div>
-        <div class="testi-stars"><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg><svg class="icon"><use href="#ic-star"/></svg></div>
-        <p>"Portfolio Builder giúp mình có hồ sơ ấn tượng để xin việc sau tốt nghiệp."</p>
+        <div class="testi-stars">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p>"Dự án nghiên cứu hành vi mua sắm ngẫu hứng qua Livestream giúp mình biến các kiến thức lý thuyết học phần TMĐT thành kỹ năng phân tích số liệu thực tế cực chất."</p>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<section style="padding: 56px 0;">
   <div class="container">
-    <div class="cta-banner reveal">
-      <img class="cta-bg" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1000&q=70&auto=format&fit=crop" alt="">
+    <div class="cta-banner">
+      <img class="cta-bg" src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1000&q=80" alt="Team meeting background">
       <div class="cta-overlay"></div>
       <div class="cta-content">
-        <h2>Sẵn sàng kết nối kỹ năng của bạn?</h2>
-        <p>Tham gia SkillBridge ngay hôm nay — miễn phí cho sinh viên.</p>
-        <div class="hero-actions" style="justify-content:center;">
-          <a href="#" class="btn btn-primary">Đăng ký miễn phí</a>
-          <a href="#" class="btn btn-outline">Tìm hiểu thêm</a>
+        <h2>Sẵn sàng bứt phá sự nghiệp ngay hôm nay?</h2>
+        <p>Tham gia hàng ngàn sinh viên đang xây dựng kỹ năng thực tế và kết nối trực tiếp với doanh nghiệp tuyển dụng.</p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-primary">Tạo tài khoản miễn phí</a>
+          <a href="#contact" class="btn btn-outline">Hợp tác doanh nghiệp</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer id="footer">
-  <svg class="footer-bg" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid slice">
-    <line x1="0" y1="50" x2="800" y2="120" stroke="#2563EB" stroke-width="1"/>
-    <line x1="0" y1="200" x2="800" y2="60" stroke="#22C55E" stroke-width="1"/>
-    <line x1="100" y1="0" x2="500" y2="300" stroke="#2563EB" stroke-width="1"/>
-    <line x1="400" y1="0" x2="800" y2="250" stroke="#22C55E" stroke-width="1"/>
-    <circle cx="100" cy="50" r="4" fill="#2563EB"/>
-    <circle cx="500" cy="120" r="4" fill="#22C55E"/>
-    <circle cx="700" cy="60" r="4" fill="#2563EB"/>
-    <circle cx="300" cy="200" r="4" fill="#22C55E"/>
-  </svg>
+<section id="contact" style="background:var(--surface); padding: 64px 0;">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 24px;">
+      <div class="eyebrow">Liên hệ Ban quản trị</div>
+      <h2>Kết nối với SkillBridge Việt Nam</h2>
+      <p>Mọi thắc mắc về kỹ thuật thử thách hoặc yêu cầu hợp tác từ phía Nhà trường và Doanh nghiệp xin vui lòng gửi về hòm thư hỗ trợ.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bg"></div>
   <div class="container footer-content">
     <div class="footer-grid">
       <div class="footer-col">
-        <div class="logo" style="margin-bottom:14px;">
-          <svg class="logo-mark" viewBox="0 0 100 100" fill="none" style="width:26px;height:26px;">
-            <circle cx="40" cy="16" r="10" fill="#2563EB"/>
-            <path d="M20 45c0-14 12-24 26-24 10 0 16 6 16 13 0 9-8 12-16 14-11 2.5-20 6-20 17 0 9 8 15 18 15" stroke="#2563EB" stroke-width="13" stroke-linecap="round" fill="none"/>
-            <path d="M48 62c11-2.5 20-6 20-17 0-9-8-15-18-15" stroke="#22C55E" stroke-width="13" stroke-linecap="round" fill="none"/>
-            <path d="M50 45c0 14-12 24-26 24" stroke="#22C55E" stroke-width="13" stroke-linecap="round" fill="none"/>
-            <circle cx="82" cy="80" r="8" fill="#22C55E"/>
-          </svg>
-          <span style="font-size:17px;"><span class="logo-blue">Skill</span><span class="logo-green">Bridge</span></span>
+        <div class="logo" style="margin-bottom:16px;">
+          <span class="logo-blue">Skill</span><span class="logo-green">Bridge</span>
         </div>
-        <p style="font-size:13.5px;color:var(--gray);max-width:240px;margin-bottom:16px;">Connect Skills. Create Opportunities.</p>
-        <div class="footer-contact"><svg class="icon"><use href="#ic-mail"/></svg>hello@skillbridge.vn</div>
-        <div class="footer-contact"><svg class="icon"><use href="#ic-phone"/></svg>1900 6868</div>
-        <div class="footer-contact"><svg class="icon"><use href="#ic-map"/></svg>Hà Nội, Việt Nam</div>
-        <div class="social-row">
-          <a class="social-btn" href="#" aria-label="Chat"><svg class="icon"><use href="#ic-chat"/></svg></a>
-          <a class="social-btn" href="#" aria-label="Camera"><svg class="icon"><use href="#ic-camera"/></svg></a>
-          <a class="social-btn" href="#" aria-label="Video"><svg class="icon"><use href="#ic-play"/></svg></a>
-          <a class="social-btn" href="#" aria-label="Link"><svg class="icon"><use href="#ic-link"/></svg></a>
-        </div>
+        <p style="font-size:13.5px; color:var(--gray); margin-bottom:14px;">Nền tảng kết nối năng lực thực chiến hàng đầu cho sinh viên và các đối tác doanh nghiệp uy tín.</p>
       </div>
-      <div class="footer-col"><h4>Sản phẩm</h4><ul><li><a href="#values">Giá trị cốt lõi</a></li><li><a href="#dashboard">Nền tảng</a></li><li><a href="#projects">Dự án</a></li></ul></div>
-      <div class="footer-col"><h4>Công ty</h4><ul><li><a href="#">Về chúng tôi</a></li><li><a href="#">Tuyển dụng</a></li><li><a href="#">Liên hệ</a></li></ul></div>
-      <div class="footer-col"><h4>Chính sách</h4><ul><li><a href="#">Điều khoản</a></li><li><a href="#">Bảo mật</a></li><li><a href="#">Quy chế hoạt động</a></li></ul></div>
+      
       <div class="footer-col">
-        <h4>Tải ứng dụng</h4>
-        <div class="qr-box">
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <div class="qr-label">Quét mã để tải ứng dụng SkillBridge</div>
+        <h4>Giải pháp</h4>
+        <ul>
+          <li><a href="#projects">Thử thách lập trình</a></li>
+          <li><a href="#projects">Phân tích dữ liệu</a></li>
+          <li><a href="#projects">Thiết kế sản phẩm</a></li>
+          <li><a href="login.html">Đăng tuyển dự án</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Dành cho bạn</h4>
+        <ul>
+          <li><a href="login.html">Đăng nhập hệ thống</a></li>
+          <li><a href="register.html">Đăng ký thành viên</a></li>
+          <li><a href="#how-it-works">Quy trình AI chấm điểm</a></li>
+          <li><a href="#features">Hồ sơ năng lực Blockchain</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hỗ trợ</h4>
+        <ul>
+          <li><a href="#">Điều khoản sử dụng</a></li>
+          <li><a href="#">Chính sách bảo mật</a></li>
+          <li><a href="#contact">Hỗ trợ kỹ thuật</a></li>
+          <li><a href="#contact">Liên hệ hợp tác</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Văn phòng</h4>
+        <p style="font-size:13.5px; color:var(--gray); line-height:1.8;">
+          Học viện Chính sách và Phát triển<br>
+          Khu đô thị Nam An Khánh, Hoài Đức, Hà Nội, Việt Nam.
+        </p>
       </div>
     </div>
+
     <div class="footer-bottom">
-      <span>© 2026 SkillBridge. All rights reserved.</span>
-      <span>Made for students &amp; SMEs, with care.</span>
+      <p>&copy; 2026 SkillBridge. All rights reserved. Toàn bộ quyền được bảo lưu.</p>
+      <p>Phát triển bởi đội ngũ SkillBridge Việt Nam.</p>
     </div>
   </div>
 </footer>
 
 <script>
-window.addEventListener('load', () => {
+// Xử lý đóng mở màn hình Loader khi tải trang hoàn tất
+window.addEventListener('load', function() {
   const loader = document.getElementById('loader');
-  setTimeout(() => { loader.classList.add('hide'); setTimeout(()=>loader.style.display='none',500); }, 300);
+  if (loader) {
+    loader.classList.add('hide');
+  }
+  initHeroNetwork();
+  initMockChart();
 });
 
-const menuToggle = document.getElementById('menuToggle');
+// Hàm chuyển đổi các tab danh mục dự án
+function switchTab(event, tabId) {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const panels = document.querySelectorAll('.steps-panel');
+  
+  tabButtons.forEach(btn => btn.classList.remove('active'));
+  panels.forEach(p => p.classList.remove('active'));
+  
+  event.currentTarget.classList.add('active');
+  const targetPanel = document.getElementById(tabId);
+  if(targetPanel) {
+    targetPanel.classList.add('active');
+  }
+}
+
+// Hàm khởi tạo lưới mạng lưới SVG động ở phần Hero (Giữ nguyên tính năng gốc file new 2)
+function initHeroNetwork() {
+  const svg = document.getElementById('heroNetwork');
+  if(!svg) return;
+  
+  const width = 540;
+  const height = 500;
+  
+  // Danh sách tọa độ các node liên kết
+  const nodes = [
+    {x: 60, y: 120, r: 4, color: 'var(--blue)'},
+    {x: 140, y: 70, r: 5, color: 'var(--green)'},
+    {x: 230, y: 150, r: 4, color: 'var(--blue)'},
+    {x: 90, y: 260, r: 6, color: 'var(--orange)'},
+    {x: 200, y: 340, r: 5, color: 'var(--blue)'},
+    {x: 340, y: 100, r: 4, color: 'var(--green)'},
+    {x: 420, y: 220, r: 6, color: 'var(--blue)'},
+    {x: 310, y: 280, r: 5, color: 'var(--orange)'},
+    {x: 460, y: 380, r: 4, color: 'var(--green)'},
+    {x: 270, y: 440, r: 5, color: 'var(--blue)'}
+  ];
+  
+  // Các đường line nối giữa các node với nhau
+  const links = [
+    {f:0, t:1}, {f:0, t:3}, {f:1, t:2}, {f:1, t:5}, {f:2, t:3}, 
+    {f:2, t:4}, {f:2, t:6}, {f:5, t:6}, {f:3, t:4}, {f:4, t:7}, 
+    {f:6, t:7}, {f:6, t:8}, {f:7, t:9}, {f:8, t:9}, {f:4, t:9}
+  ];
+  
+  // Render các line nối dạng dash-array
+  links.forEach(l => {
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', nodes[l.f].x);
+    line.setAttribute('y1', nodes[l.f].y);
+    line.setAttribute('x2', nodes[l.t].x);
+    line.setAttribute('y2', nodes[l.t].y);
+    svg.appendChild(line);
+  });
+  
+  // Render các node hình tròn kèm hiệu ứng glow pulse
+  nodes.forEach(n => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    
+    const glow = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    glow.setAttribute('cx', n.x); glow.setAttribute('cy', n.y);
+    glow.setAttribute('r', n.r + 4); glow.setAttribute('fill', n.color);
+    glow.setAttribute('class', 'node-glow');
+    
+    const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    dot.setAttribute('cx', n.x); dot.setAttribute('cy', n.y);
+    dot.setAttribute('r', n.r); dot.setAttribute('fill', n.color);
+    dot.setAttribute('class', 'node-dot');
+    
+    g.appendChild(glow);
+    g.appendChild(dot);
+    svg.appendChild(g);
+  });
+}
+
+// Hàm vẽ biểu đồ chart cột mô phỏng trong Laptop Mockup
+function initMockChart() {
+  const chart = document.getElementById('mockChart');
+  if(!chart) return;
+  const barCount = 14;
+  for(let i=0; i<barCount; i++) {
+    const bar = document.createElement('div');
+    bar.className = 'mock-bar';
+    // Tạo độ cao ngẫu nhiên động cho cột biểu đồ mô phỏng
+    const height = Math.floor(Math.random() * 26) + 8;
+    bar.style.height = height + 'px';
+    chart.appendChild(bar);
+  }
+}
+
+// Xử lý hiệu ứng di chuột nghiêng nhẹ mockup Laptop (Parallax)
+const stage = document.querySelector('.center-stage');
+const mock = document.getElementById('laptopMock');
+if(stage && mock) {
+  stage.addEventListener('mousemove', (e) => {
+    const rect = stage.getBoundingClientRect();
+    const x = e.clientX - rect.left - (rect.width/2);
+    const y = e.clientY - rect.top - (rect.height/2);
+    mock.style.transform = `translateX(-50%) rotateY(${x * 0.04}deg) rotateX(${-y * 0.04}deg)`;
+  });
+  stage.addEventListener('mouseleave', () => {
+    mock.style.transform = 'translateX(-50%) rotateY(0deg) rotateX(0deg)';
+  });
+}
+
+// Responsive Menu Toggle di động
+const toggleBtn = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  const isOpen = navLinks.style.display === 'flex';
-  navLinks.style.cssText = isOpen ? '' : 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#fff;padding:20px 24px;border-bottom:1px solid #E4E9F2;gap:16px;';
-});
-
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.steps-panel').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+if(toggleBtn && navLinks) {
+  toggleBtn.addEventListener('click', () => {
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    navLinks.style.flexDirection = 'column';
+    navLinks.style.position = 'absolute';
+    navLinks.style.top = '100%'; navLinks.style.left = '0'; navLinks.style.right = '0';
+    navLinks.style.background = 'var(--white)'; navLinks.style.padding = '20px';
+    navLinks.style.borderBottom = '1px solid var(--border)';
   });
-});
-
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.12 });
-revealEls.forEach(el => observer.observe(el));
-
-/* subtle mouse parallax on hero laptop */
-const heroVisual = document.getElementById('heroVisual');
-const laptopMock = document.getElementById('laptopMock');
-if (heroVisual && laptopMock) {
-  heroVisual.addEventListener('mousemove', (e) => {
-    const rect = heroVisual.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    laptopMock.style.transform = `translateX(calc(-50% + ${x*10}px)) translateY(${y*8}px)`;
-  });
-  heroVisual.addEventListener('mouseleave', () => { laptopMock.style.transform = 'translateX(-50%)'; });
 }
 </script>
+
 </body>
 </html>
