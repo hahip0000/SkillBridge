@@ -242,10 +242,10 @@ section{padding:72px 0;}
 .partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:stretch;}
 .partner-logo{position:relative;display:flex;align-items:center;justify-content:center;height:100px;border:1px solid var(--border);border-radius:var(--r-sm);background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:14px 20px;transition:all .25s ease;overflow:hidden;}
 .partner-logo:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 24px rgba(37,99,235,0.12);background:var(--white);}
-.partner-logo img{max-width:100%;max-height:56px;width:auto;height:auto;object-fit:contain;filter:grayscale(1);opacity:.65;transition:all .25s ease;}
-.partner-logo:hover img{filter:grayscale(0);opacity:1;}
-.partner-fallback{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--gray-light);text-align:center;letter-spacing:-0.01em;transition:color .25s ease;}
-.partner-logo:hover .partner-fallback{color:var(--blue);}
+.partner-logo img{max-width:100%;max-height:56px;width:auto;height:auto;object-fit:contain;filter:none;opacity:1;transition:all .25s ease;}
+.partner-logo:hover img{filter:none;opacity:1;transform:scale(1.03);}
+.partner-fallback{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:var(--blue);text-align:center;letter-spacing:-0.01em;transition:color .25s ease;}
+.partner-logo:hover .partner-fallback{color:var(--blue-dark);}
 
 /* TESTIMONIALS */
 .testi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
@@ -777,7 +777,7 @@ footer{position:relative;border-top:1px solid var(--border);padding:64px 0 28px;
       <p>SkillBridge hợp tác với các trường đại học và doanh nghiệp SME nhằm tạo thêm nhiều cơ hội thực hành và dự án thực tế cho sinh viên.</p>
     </div>
 
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:15px; color:var(--gray); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;text-align: center;">Đối tác giáo dục</h3>
+    <h3 style="text-align:center; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:15px; color:var(--gray); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">Đối tác giáo dục</h3>
     <div class="partners-grid" style="margin-bottom:44px; grid-template-columns:repeat(6,1fr);">
       <div class="partner-logo"><img src="https://navigates.vn/wp-content/uploads/2023/03/adp.jpg" alt="Học viện Chính sách và Phát triển" style="max-height:55px; width:auto; object-fit:contain;"></div>
       <div class="partner-logo"><img src="https://th.bing.com/th/id/OIP.XXcfuLYsowLpCHJuFVVYzQHaK7?w=115&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Đại học Bách Khoa Hà Nội" style="max-height:55px; width:auto; object-fit:contain;"></div>
@@ -787,7 +787,7 @@ footer{position:relative;border-top:1px solid var(--border);padding:64px 0 28px;
       <div class="partner-logo"><img src="https://th.bing.com/th/id/OIP.i-oKcQVZg5t_kqtwmWqWkQAAAA?w=170&h=118&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Đại học FPT" style="max-height:50px; width:auto; object-fit:contain;"></div>
     </div>
 
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:15px; color:var(--gray); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;text-align: center;">Doanh nghiệp SME tiêu biểu</h3>
+    <h3 style="text-align:center; font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:15px; color:var(--gray); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">Doanh nghiệp SME tiêu biểu</h3>
     <div class="partners-grid">
       <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">TechNova</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Software Dev</span></div>
       <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Pixel Studio</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">UI/UX Design</span></div>
@@ -795,8 +795,8 @@ footer{position:relative;border-top:1px solid var(--border);padding:64px 0 28px;
       <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">EduNext</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">EduTech</span></div>
       <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Nova Digital</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Digital Marketing</span></div>
       <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Bright Media</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Business Consulting</span></div>
-      <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Alpha Data</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Data Analytics</span></div>
-      <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Zenith Logistics</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Supply Chain</span></div>
+      <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Vivid Tech</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Mobile App</span></div>
+      <div class="partner-logo" style="flex-direction:column; gap:2px;"><span class="partner-fallback" style="font-size:15px;">Sunrise Retail</span><span style="font-size:11px; font-weight:500; color:var(--gray-light);">Retail & F&B</span></div>
     </div>
   </div>
 </section>
